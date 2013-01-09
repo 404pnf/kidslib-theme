@@ -1,0 +1,27 @@
+@charset "utf-8";
+.main{ width:1300px; height:726px; background:url(../images/main_bg.gif) no-repeat 0 85px;padding-top:75px;}
+
+/*分类1*/ 
+.nav_classify{padding:260px 0 0 63px;}
+.nav_classify li{ float:left; width:157px; margin-right:63px;}
+.nav_classify li a{ width:157px; height:60px; display:block}
+
+/*早教*/
+.nav_classify .nc1{ margin-top:140px;}
+.nav_classify .nc1 a{ background:url(../images/earlier_education.jpg) no-repeat}
+.nav_classify .nc1 a:hover{ background:url(../images/earlier_education_hover.jpg) no-repeat}
+
+/*电子书*/
+.nav_classify .nc2 a{ background:url(../images/e_book.jpg) no-repeat}
+.nav_classify .nc2 a:hover{ background:url(../images/e_book_hover.jpg) no-repeat}
+
+/*小课堂*/
+.nav_classify .nc3{ margin-top:90px; margin-left:65px;}
+.nav_classify .nc3 a{ background:url(../images/e_small_class.jpg) no-repeat}
+.nav_classify .nc3 a:hover{ background:url(../images/e_small_class_hover.jpg) no-repeat}
+
+/*分类2*/ 
+.nav_age{ margin-right:80px; margin-top:245px; text-align:right; display: inline}
+.nav_age li { width:106px; height:35px; margin-bottom:11px;}
+.nav_age li a{ color:#ffffff; font-size:21px; font-weight:bold; line-height:32px;}
+.nav_age li a:hover{ color:#000000; }

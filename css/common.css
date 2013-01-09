@@ -1,0 +1,29 @@
+@charset "utf-8";
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;vertical-align:baseline;}
+ul li{ list-style:none}
+a{ text-decoration:none}
+.fclear{*zoom:1;clear:both}										 /*清除浮动 */
+.fleft{float:left}                                       /*左浮动 */
+.fright{float:right}                                     /*右浮动 */
+.fcenter{ margin:0 auto; text-align:center;} 	 	 	 /*元素居中*/
+.eborder{border:1px solid #ddd}                          /*1px的实边*/
+.first{margin-left:0;padding-left:0}                     /*第一个元素左边距0*/
+.last{margin-right:0;padding-right:0}                    /*最后一个元素右边距0*/ 
+.cborder{border:none!important;}                         /*去除元素边*/
+.ehide{display:none;}                                    /*隐藏元素*/ 
+.eshow{display: block;}                                  /*显示元素*/ 
+
+
+
+
+
+.wrapper{ width:1300px; height:816px; margin:0 auto; background:#fbfae2; position:relative}
+/*top*/
+.top{ width:1260px; height:101px; background:url(../images/top_bg.png) repeat-x; position:absolute; top:0; left:0; padding-right:40px;}
+.top_login{ height:22px; line-height:22px;}
+.title{ margin:5px auto 0 auto;}
+.top_login a{ color:#7b2e00; font-size:13px; margin-right:20px; font-family:"微软雅黑"}
+.top_login a:hover{ color:#ffffff;}
+/*bottom*/
+.bottom{ width:100%; height:105px; position:absolute; bottom:0; left:0; background:url(../images/bottom_bg.png) repeat-x;}
+.fltrp_logo{ background:url(../images/fltrp_logo.jpg); width:191px; height:49px; margin:35px 60px 0 0;}
