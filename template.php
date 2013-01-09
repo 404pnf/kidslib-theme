@@ -235,6 +235,12 @@ function ilearning_theme(&$existing, $type, $theme, $path){
      'template' => 'user-register',
      'preprocess functions' => array('ilearning_preprocess_user_register_form'),
   );
+  
+  $hooks['user_login'] = array (
+     'template' => 'user-login',
+      'render element' => 'form', 
+      //'preprocess functions' => array('ilearning_preprocess_user_login'),	  
+  );
   //$hooks['user_register_name'] = array (
   //   'variables' => array('content' => NULL),
   //);
@@ -255,7 +261,11 @@ function ilearning_form_alter(&$form, &$form_state, $form_id) {
     //$form['name']['#title'] = Null; // Change text on form
     $form['account']['name']['#description'] = Null; // Change text on form
     $form['account']['mail']['#description'] = Null;
-    //$form['account']['name']['#theme'] = array('user_register_name',);
+	
+    $form['account']['name']['#theme_wrappers'] = array();
+	$form['account']['mail']['#theme_wrappers'] = array();
+	$form['account']['pass']['#theme_wrappers'] = array();
+	$form['field_xieyi']['#theme_wrappers'] = array();
     //$form['name']['#attributes'] = array('placeholder' => t('username'));
     //$form['name']['#size'] = '30';
     //$form['pass']['#title'] = Null;
@@ -294,4 +304,22 @@ function ilearning_captcha($variables) {
 	
     return '<div class="captcha">' . drupal_render_children($element) . '<div class="clearfix"></div></div>';
   }
+}
+
+function ilearning_preprocess_user_login(&$variables) {  
+ // drupal_set_message('123456');
+ // print debug($variables['form']['name']);
+ // $variables['name'] = drupal_render($variables['form']['name']);
+ // $variables['pass'] = drupal_render($variables['form']['pass']);
+ // $variables['login'] = drupal_render($variables['form']['actions']['submit']);
+ unset($variables['form']['links']);
+  //$variables['links'] = drupal_render($variables['form']['links']);
+ // $variables['hidden'] = drupal_render_children($variables['form']);
+}
+
+function ilearning_form_user_login_alter(&$form, &$form_state) {
+   //drupal_set_message('123456');
+   $form['name']['#theme_wrappers'] = array();
+   $form['pass']['#theme_wrappers'] = array();
+   //print debug($form);
 }
