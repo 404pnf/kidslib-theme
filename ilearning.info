@@ -49,7 +49,7 @@ stylesheets[all][] = system.menus.css
 ; Then we add our own stylesheets.
 stylesheets[all][] = css/index.css
 stylesheets[all][] = css/common.css
-
+stylesheets[all][] = css/fonts.css
 
 
 

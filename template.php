@@ -307,13 +307,13 @@ function ilearning_captcha($variables) {
 }
 
 function ilearning_preprocess_user_login(&$variables) {  
- // drupal_set_message('123456');
- // print debug($variables['form']['name']);
+ //drupal_set_message('123456');
+ //print debug($variables['form']['name']);
  // $variables['name'] = drupal_render($variables['form']['name']);
  // $variables['pass'] = drupal_render($variables['form']['pass']);
- // $variables['login'] = drupal_render($variables['form']['actions']['submit']);
+ $variables['login'] = drupal_render($variables['form']['actions']['submit']);
  unset($variables['form']['links']);
-  //$variables['links'] = drupal_render($variables['form']['links']);
+ //$variables['links'] = drupal_render($variables['form']['links']);
  // $variables['hidden'] = drupal_render_children($variables['form']);
 }
 
@@ -321,5 +321,6 @@ function ilearning_form_user_login_alter(&$form, &$form_state) {
    //drupal_set_message('123456');
    $form['name']['#theme_wrappers'] = array();
    $form['pass']['#theme_wrappers'] = array();
+   //$form['actions']['submit']['#value'] = t('');
    //print debug($form);
 }
