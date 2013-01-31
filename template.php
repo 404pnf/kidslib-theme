@@ -324,3 +324,41 @@ function ilearning_form_user_login_alter(&$form, &$form_state) {
    //$form['actions']['submit']['#value'] = t('');
    //print debug($form);
 }
+
+
+//previous || next node which in the standard node type
+function node_sibling($node, $dir = 'next', $prepend_text = '', $append_text = '', $next_node_text = NULL) {
+	$query = 'SELECT n.nid, n.title FROM {node} n WHERE '
+			. 'n.created ' . ($dir == 'prev' ? '<' : '>') . ' :created AND n.type = :type AND n.status = 1 '
+			. "AND language IN (:lang, 'und') "
+			. 'ORDER BY n.created ' . ($dir == 'prev' ? 'DESC' : 'ASC') . ' LIMIT 1';
+	//use fetchObject to fetch a single row
+	$row = db_query($query, array(':created' => $node->created, ':type' => $node->type, ':lang' => $node->language))->fetchObject();
+
+	if ($row) {
+		drupal_add_html_head_link(array(
+		'rel' => $dir,
+		'type' => 'text/html',
+		'title' => $row->nid,
+		// Force the URL to be absolute, for consistency with other <link> tags
+		// output by Drupal.
+		//'href' =>url('node/' . $row->nid, array('absolute' => TRUE)),
+		));
+		
+		$text = $next_node_text ? t($next_node_text) : $row->nid;
+		return t($text,array('attributes' => array('rel' => array($dir))));
+	} else {
+		return FALSE;
+	}
+}
+
+function ilearning_get_shuffle_array() {
+  $cache = &drupal_static(__FUNCTION__);
+  if (!isset($cache)) {
+    $bg_arr = array('01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12', '13', '14', '15');
+    shuffle($bg_arr);
+	$cache = $bg_arr;
+    return $cache;
+  }
+  return $cache;
+}

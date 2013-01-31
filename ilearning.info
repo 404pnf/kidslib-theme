@@ -1,4 +1,4 @@
-; Drupal's .info files allow themers to easily specify some of the static
+﻿; Drupal's .info files allow themers to easily specify some of the static
 ; properties of your theme. Properties such as its name, stylesheets,
 ; javascripts, and block regions.
 ;
@@ -49,8 +49,9 @@ stylesheets[all][] = system.menus.css
 ; Then we add our own stylesheets.
 stylesheets[all][] = css/index.css
 stylesheets[all][] = css/common.css
-stylesheets[all][] = css/fonts.css
-
+stylesheets[all][] = css/test.css
+stylesheets[all][] = css/ebook.css
+stylesheets[all][] = css/classify.css
 
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
@@ -67,7 +68,7 @@ stylesheets[all][] = css/fonts.css
 
 ; Optionally add some JavaScripts to your theme.
 
-;scripts[] = js/script.js
+scripts[] = js/script.js
 
 
 

@@ -36,15 +36,22 @@
 .login_btn a{color:#ffffff!important;}
 /*一行输入框*/
 .input_text{ color:#fb5f06; font-size:20px; margin-bottom:10px; margin-left:50px; white-space:pre}
-.input_text_1{ color:#fb5f06; font-size:20px; margin-bottom:10px; margin-left:50px; }
-.input_text_1 input,
+.input_text_1{ color:#fb5f06; font-size:20px; margin-bottom:10px; margin-left:50px; overflow:hidden; display:block}
+
 .input_text input{-webkit-border-radius:15px;-moz-border-radius:15px; background:#ffffff; border:none; width:334px; height:31px; line-height:31px; color:#898989; white-space::normal}
+.input_text_1 input{-webkit-border-radius:15px;-moz-border-radius:15px; background:#ffffff; border:none; height:31px; line-height:31px; color:#898989; white-space::normal}
 
 /*替换原样式*/
 .popups-container{ background:#FBD206!important}
 .popups-close{ background:url(../images/close.jpg) no-repeat!important; width:38px!important; height:38px!important;}
-.input_text label{ font-weight:normal!important; float:left}
+
+.input_text_1 label,
+.input_text label{ font-weight:normal!important; float:left!important; clear:left; width:100px!important }
+.input_text_1 .form-item input,
 .input_text .form-item input{ float:left}
+.captcha img{ position:absolute; left:300px; top:200px;}
+.popups-container{ position:relative}
+.form-item, .form-actions{ display:block;}
 
 /*登录页注册条*/
 .login_title_foot{ -webkit-border-radius:5px;-moz-border-radius:5px; background:#fb5f06; }

@@ -1,9 +1,9 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;vertical-align:baseline;}
 /*字体授权*/
 @font-face{
 	font-family: 'DFHaibaoW12';
-	src: url('../fonts/华康海报体W12(P).TTF'); 
+	src: url('../fonts/huakangW12.TTF' ); 
 	format('truetype');
 	}
 @font-face{
@@ -28,22 +28,25 @@ img{ border:none}
 .font_DFHaibaoW12{font-family: "DFHaibaoW12";}
 .font_mrosoftYHB{font-family: "mrosoftYHB";}
 .oh{ overflow:hidden}
-
+.fclear{clear:both;}
 
 .wrapper{ width:1300px; height:816px; margin:0 auto; background:#fbfae2; position:relative}
-.repeat_bg{ background:url(../images/repeat_bg.jpg)}
+.contextual-links-region {position:static}
+.repeat_bg{ background:url(../images/repeat_bg.jpg);width:100%}
+/*video*/
+.jwplayer-video{margin:0 auto; display:block; width:720px; }
 /*top*/
-.top{ width:1260px; height:101px; background:url(../images/top_bg.png) repeat-x; position:absolute; top:0; left:0; padding-right:40px;}
+.top{ width:1260px; height:101px; background:url(../images/top_bg.png) repeat-x; position:absolute; top:0; left:0; padding-right:40px; z-index:4}
 .top_login{ height:22px; line-height:22px;}
 /*登录后*/
-	.top_login img { margin-right:10px; margin-top:3px;}
+.top_login img { margin-right:10px; margin-top:3px;}
 .title{ margin:5px auto 0 auto;}
 .top_login a{ color:#7b2e00; font-size:13px; margin-right:20px; font-family:"mrosoftYHB"}
 .top_login a:hover{ color:#ffffff;}
 
 /*user下拉*/
 .user_name{ position:relative; background: url(../images/arrow_black.jpg) no-repeat right center; padding-right:10px;}
-.user_nav{ width:105px;background:url(../images/link_bottom.jpg) no-repeat bottom;  padding-bottom:15px; position:absolute; right:0; top:22px; display:none}
+.user_nav{ width:105px;background:url(../images/link_bottom.png) no-repeat bottom;  padding-bottom:15px; position:absolute; right:0; top:22px; display:none}
 .user_nav li{width:100%; height:25px; background:url(../images/link_bg.jpg) repeat-y; line-height:25px; text-align:center}
 .user_nav li a{width:100%; color:#ffffff; font-size:16px; text-decoration:underline;text-align:center; display:block}
 .user_nav li a:hover{ text-decoration:none}
@@ -56,7 +59,7 @@ img{ border:none}
 	.title_left a.home{ background:url(../images/home.jpg) no-repeat 0 center; }
 	.title_left a.back:hover{ color:#ffffff  }
 	.title_left a.home:hover{ color:#ffffff }
-.title_name{ color:#ffffff; font-size:37px; margin:5px auto 0 auto; text-align:center; background:url(../images/logo-img.png) no-repeat right center; padding-right:60px; width:125px; height:51px; display:block;text-shadow:2px 3px 5px #eeb500;}
+.title_name{ color:#ffffff; font-size:37px; margin:5px auto 0 auto; text-align:right; background:url(../images/logo-img.png) no-repeat right center; padding-right:60px; width:300px; height:51px; display:block;text-shadow:2px 3px 5px #eeb500;}
 /*bottom*/
 .bottom{ width:100%; height:105px; position:absolute; bottom:0; left:0; background:url(../images/bottom_bg.png) repeat-x;}
 .fltrp_logo{ background:url(../images/fltrp_logo.jpg); width:247px; height:62px; margin:35px 60px 0 0;}
