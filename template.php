@@ -397,3 +397,15 @@ function ilearning_get_shuffle_array() {
   }
   return $cache;
 }
+
+// bai, xiaobai 
+// overwrite html.tpl.php
+// custom html.tpl.php
+// https://drupal.org/node/1041768
+// see last reply
+function ilearning_preprocess_html(&$variables) {
+  // If on an individual node page, add the node type to body classes.
+  if ($node = menu_get_object()) {
+    $variables['theme_hook_suggestions'][] = 'html__'. $node->type;
+  }
+}

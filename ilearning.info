@@ -58,6 +58,7 @@ stylesheets[all][] = css/ebook.css
 
 ; Optionally add some JavaScripts to your theme.
 scripts[] = js/script.js
+scripts[] = js/jquery.bookify.js
 
 
 

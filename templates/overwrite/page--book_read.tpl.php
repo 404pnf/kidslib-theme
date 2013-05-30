@@ -3,4 +3,3 @@
  <?php print render($page['help']); ?>
  <?php print render($page['content']); ?>
 </div>
-
