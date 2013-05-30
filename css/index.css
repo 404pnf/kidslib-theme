@@ -22,44 +22,76 @@
 .nav_classify .nc3 a:hover{ background:url(../images/car3_hover.gif) no-repeat}
 
 /*分类2*/ 
-.nav_age{ margin-right:80px; margin-top:245px; text-align:right; display: inline}
+.nav_age{ margin-right:78px; margin-top:245px; text-align:right; display: inline}
 .nav_age li { width:106px; height:35px; margin-bottom:11px;font-family: "DFHaibaoW12";}
-.nav_age li a{ color:#ffffff; font-size:21px; font-weight:bold; line-height:32px;}
+.nav_age li a{ color:#ffffff; font-size:19px; font-weight:bold; line-height:32px;}
 .nav_age li a:hover{ color:#000000; }
 
-/*login*/
+/*------------------------------------login------------------------------------------*/
 .modal-scroll{ background:#fbd206}
-.login_title{ /*width:491px; height:20px;-webkit-border-radius:15px;-moz-border-radius:15px; */background:#fb5f06!important; font-size:20px;text-shadow:4px 4px 4px #ce4104; line-height:80px; padding-left:50px; margin-bottom:25px;}
+.popups-title{ height:80px;/*-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px;*/ background:#fb5f06!important; font-size:20px;text-shadow:4px 4px 4px #ce4104; line-height:80px; padding-left:50px;/* margin-bottom:25px;*/}
 
-.login_title #modal-title{ color:#ffffff!important; font-family: "DFHaibaoW12"; font-size:37px;}
-.login_btn{-webkit-border-radius:15px;-moz-border-radius:15px; background:#f1592a; font-size:47px; color:#ffffff;-webkit-box-shadow:2px 3px 5px #c6a204;-moz-box-shadow:2px 4px 3px #c6a204; width:157px; height:84px; margin:30px 50px 0 50px;}
+.popups-title #modal-title{ color:#ffffff!important; font-family: "DFHaibaoW12"; font-size:37px; float:left}
+.login_btn,.forgot_pw input[type="submit"]{-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px;background:#f1592a; font-size:47px; color:#ffffff;-webkit-box-shadow:2px 3px 5px #c6a204;-moz-box-shadow:2px 4px 3px #c6a204; width:157px; height:84px; margin:30px 50px 0 50px;}
+.forgot_pw input[type="submit"]{ font-size:35px!important;font-family: "DFHaibaoW12";}
 .login_btn a{color:#ffffff!important;}
-/*一行输入框*/
-.input_text{ color:#fb5f06; font-size:20px; margin-bottom:10px; margin-left:50px; white-space:pre}
-.input_text_1{ color:#fb5f06; font-size:20px; margin-bottom:10px; margin-left:50px; overflow:hidden; display:block}
 
-.input_text input{-webkit-border-radius:15px;-moz-border-radius:15px; background:#ffffff; border:none; width:334px; height:31px; line-height:31px; color:#898989; white-space::normal}
-.input_text_1 input{-webkit-border-radius:15px;-moz-border-radius:15px; background:#ffffff; border:none; height:31px; line-height:31px; color:#898989; white-space::normal}
+.login_first_line{ margin-top:35px; }
+.form-item input.error, .form-item textarea.error, .form-item select.error,.input_text  input.error {
+border: 2px solid red!important;}
+
+/*一行输入框*/
+.input_text{ color:#fb5f06; font-size:20px; margin-bottom:10px; }
+.input_text_1{ color:#fb5f06; font-size:20px; overflow:hidden; display:block; margin-left:16px;}
+.input_text span{ width:115px; text-align:right; display:block; float:left; padding-right:20px;}
+.input_text input{-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px; background:#ffffff; border:none; width:334px; height:31px; line-height:31px; color:#898989; white-space::normal}
+.input_text_1 input{-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px; background:#ffffff; border:none; height:31px; line-height:31px; color:#898989; white-space::normal}
 
 /*替换原样式*/
 .popups-container{ background:#FBD206!important}
 .popups-close{ background:url(../images/close.jpg) no-repeat!important; width:38px!important; height:38px!important;}
 
 .input_text_1 label,
-.input_text label{ font-weight:normal!important; float:left!important; clear:left; width:100px!important }
+.input_text label{ font-weight:normal!important; float:left!important; clear:left; width:110px!important; text-align:right ; padding-right:8px;}
 .input_text_1 .form-item input,
 .input_text .form-item input{ float:left}
-.captcha img{ position:absolute; left:300px; top:200px;}
+.captcha img{margin-left:10px;}
 .popups-container{ position:relative}
 .form-item, .form-actions{ display:block;}
 
 /*登录页注册条*/
-.login_title_foot{ -webkit-border-radius:5px;-moz-border-radius:5px; background:#fb5f06; }
+.login_title_foot{ -webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px; background:#fb5f06; }
 .login_title_foot a{ display:block; width:200px; height:80px; line-height:80px; margin:20px auto 0 auto;font-size:16px; color:#7b2e00;font-family: "mrosoftYHB"}
 /*tips*/
 .tips{ margin-left:50px; font-size:13px; color:#8c4401;}
 .tips input{ margin-right:10px;}
 
+/*协议*/
+.register_protocol{white-space:normal!important; margin:0!important; color:#7b2e00; font-size:20px; margin-top:10px!important; * margin-top:0px!important/*for ie67*/}
+.register_protocol pre input{float:left!important; display:block!important; margin-left:50px!important}
+.register_protocol .form-item{white-space:normal!important;}
+.register_protocol pre{ height:30px!important}
+.register_protocol pre .form-item-field-xieyi-und{ margin-top:0!important; margin-bottom:0!important}
+.register_protocol .option{font-family: "DFHaibaoW12";  display:block; font-size:18px; overflow:hidden; width:350px!important; float:right!important; margin-right:80px;}
+/*验证码*/
+.input_text_1  .captcha{ margin-top:-10px!important;}
 
+/*密码*/
+.pw { overflow:hidden; margin-top:0!important; margin-bottom:0!important}
+.pw .form-item-pass-pass1{ overflow:hidden; margin:0 0 10px 0!important}
+.pw .form-item-pass-pass2{ overflow:hidden; margin:0!important}
+.pw .form-item-pass-pass1 input,
+.pw .form-item-pass-pass2 input{ margin-bottom:0!important}
 
+/*注册按钮*/
+.form-submit{-webkit-border-radius:15px;-moz-border-radius:15px;border-radius:15px;background:#f1592a; font-size:30px; color:#ffffff;-webkit-box-shadow:2px 3px 5px #c6a204;-moz-box-shadow:2px 4px 3px #c6a204; width:157px; height:60px; margin:25px 50px 10px 50px; font-family: "DFHaibaoW12"; *margin:10px 50px 10px 50px;/*for ie67*/}
+
+/*登录 注册修补*/
+/*div.modal-forms-modal-content{ height:auto!important; padding-bottom:10px;}  */
+
+div.modal-forms-modal-content{ height:auto!important; padding-bottom:10px;} 
+#modal-content{ height:auto!important; padding-bottom:10px;}
+div.error{-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px; border:none; font-family: "DFHaibaoW12"; font-size:18px;}
+h2.error{display:none} 
+#modalContent{ top:180px!important;}
 

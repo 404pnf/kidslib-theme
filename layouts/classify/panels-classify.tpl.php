@@ -14,6 +14,7 @@
  *   - $content['right']: Content in the right column.
  */
 ?>
+<div class="book_classify">
 <!-- 	顶部开始	 -->
 <div class="top pngFix">
 	<div class="top pngFix">
@@ -53,4 +54,6 @@
 <!-- 	书架结束	 -->
 <div class="bottom">
 	<div class="fltrp_logo fright"></div>
+</div>
+
 </div>

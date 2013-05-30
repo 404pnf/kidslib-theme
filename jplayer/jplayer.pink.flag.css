@@ -92,7 +92,7 @@ div.jp-interface {
 
 div.jp-audio .jp-interface {
 	height: 50px;
-	padding-top:30px;
+	margin-left:-20px;
 }
 
 div.jp-audio-stream .jp-interface {
@@ -115,7 +115,7 @@ div.jp-interface ul.jp-controls {
 	list-style-type:none;
 	padding: 1px 0 2px 1px;
 	overflow:hidden;
-	width: 201px;
+	width: 180px;
 	height: 34px;
 }
 
@@ -386,8 +386,8 @@ div.jp-audio ul.jp-controls a.jp-mute,
 div.jp-audio ul.jp-controls a.jp-unmute,
 div.jp-audio-stream ul.jp-controls a.jp-mute,
 div.jp-audio-stream ul.jp-controls a.jp-unmute {
-	top:2px;
-	left:10px;
+	top:10px;
+	left:120px;
 }
 
 div.jp-audio ul.jp-controls a.jp-volume-max,
@@ -431,7 +431,7 @@ div.jp-interface ul.jp-controls a.jp-volume-max:hover {
 .jp-volume-bar {
 	background: url("jplayer.pink.flag.jpg") 0px -300px repeat-x;
 	position: absolute;
-	width: 177px;
+	width: 60px;
 	height: 6px;
 	margin-left:20px;
 
@@ -445,8 +445,8 @@ div.jp-interface ul.jp-controls a.jp-volume-max:hover {
 
 div.jp-audio .jp-interface .jp-volume-bar,
 div.jp-audio-stream .jp-interface .jp-volume-bar {
-	top:10px;
-	left:10px;
+	top:17px;
+	left:120px;
 }
 
 div.jp-audio-stream .jp-interface .jp-volume-bar {

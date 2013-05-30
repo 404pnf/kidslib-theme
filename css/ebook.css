@@ -22,6 +22,7 @@
 	/*6*/
 	a.unit_m6{ background:url(../images/unit_m6.png) no-repeat; width:157px; height:273px; line-height:273px; left:1000px; top:130px;padding-left:30px!important}
 	a.unit_m6:hover{ background:url(../images/unit_m6o.png) no-repeat;}
+.unit_bg .nianling{ display:block; width:130px; height:50px;font-family: "DFHaibaoW12"; color:#ffffff; font-size:28px; line-height:50px; position:absolute; right:45px; bottom:183px; text-align:center;}
 	
 /*-------------------电子书播放器-------------------*/
 /*page pre next*/
@@ -35,16 +36,23 @@ a.ebook_next:hover{ background:url(../images/ebook_next_over.png);}
 
 
 /*ebook*/
-.ebook_main{ width:1244px; height:748px; margin:0 auto; }
+.ebook_main{ width:550px; margin:0 auto; /*overflow:hidden*/}
 
 /*操作*/
-.ebook_op{ height:47px; width:100%; background:url(../images/ebook_op_bg.jpg) repeat-x;}
+/*.ebook_op{ height:47px; width:100%; background:url(../images/ebook_op_bg.jpg) repeat-x;}
 .ebook_play,
 .ebook_collect,
 .ebook_volume,
 .ebook_ce{ display:block; float:left; margin-right:10px; margin-top:5px; width:74px; height:33px; line-height:33px; background:#333;}
 .ebook_play{ margin-left:150px;}
 .ebook_page{ width:163px; height:35px; background:#666; display:block; float:right; margin-top:5px; margin-right:120px;}
+*/
+.link-wrapper{ position:fixed;bottom:-25px; left:0; width:100%; height:70px; background:url(../images/ebook_op_bg.png) repeat-x; z-index:100}
+.link-wrapper ul.links{ display:block; width:370px; float:left}
+.link-wrapper ul.links a{font-family: "DFHaibaoW12"; font-size:18px; color:#f26522; height:50px; line-height:50px; margin-left:200px;  padding:5px 45px;}
+
+.link-wrapper ul.links .flag-action{background:url(../images/star_un.png) no-repeat left center;}
+.link-wrapper ul.links .unflag-action{background:url(../images/star_on.png) no-repeat left center;}
 
 /*ebookview的minipager css*/
 ul.pager .view-id-field_collection_ebook_view .pager-current{
@@ -70,18 +78,31 @@ font-size:250%;
 #xin_image ul.pager .pager-current{
   display:none;
 }
-#xin_image ul.pager .last{
-  position:absolute;
-  left:1150px;
-  top:380px;
-  font-size:250%;
-}
-#xin_image  ul.pager .first{
-  position:absolute;
-  left:20px;
-  top:380px;
-font-size:250%;
-}
-#xin_image {
-  margin-left: 150px;
-}
+#xin_image .ebook_main{ margin:0 auto;}
+#xin_image .ebook_main img{ z-index:2; width:550px; height:800px;}
+
+#xin_image .item-list .pager{ position: inherit!important;}
+#xin_image .pager .pager-next ,
+#xin_image .pager .pager-previous{ width:74px; height:170px; display:block; filter: Alpha(Opacity=100);opacity: 1;}
+#xin_image .pager .pager-previous{position: absolute!important;left: 150px!important;top:50%!important; background:none!important }
+#xin_image .pager .pager-next{position: absolute!important;right:150px!important;top: 50%!important;  background:none!important}
+#xin_image .pager .pager-previous a{ background:url(../booklet/images/arrow-prev.png) 0 0  no-repeat ; padding-top:170px; width:74px;display:block; height:0px; overflow:hidden }
+#xin_image .pager .pager-next a{ background:url(../booklet/images/arrow-next.png) 0 0 no-repeat ; padding-top:170px; width:74px;display:block; height:0px;overflow:hidden}
+
+/*#xin_image .ebook_main{ position:relative}*/
+#xin_image .item-list{ position:static!important}
+#xin_image .ebook_op{ position:absolute; bottom:-5px; left:100px;}
+#xin_image .link-wrapper{ text-align:right}
+.xin_jwplayer6{ width:720px; margin:0 auto}
+div.xin_jwplayer6+span{ width:720px; height:35px; margin:0 auto; display:block; position:relative; background:url(../images/ebook_op_bg.png) repeat-x;}
+div.xin_jwplayer6+span a{font-family: "DFHaibaoW12"; font-size:18px; color:#f26522; height:50px; width:80px; line-height:55px;  padding:5px 0 5px 35px; position:absolute; bottom:-12px; right:0}
+div.xin_jwplayer6+span a.flag-action{background:url(../images/star_un.png) no-repeat left center;}
+div.xin_jwplayer6+span a.unflag-action{background:url(../images/star_on.png) no-repeat left center;}
+	/*收藏*/
+	#xin_image  .ebook_main span a{ position:absolute; right:-660px; bottom:75px;font-family: "DFHaibaoW12"; font-size:18px; color:#f26522; height:50px; width:80px; line-height:55px;  padding:5px 0px 5px 35px;}
+	#xin_image  .ebook_main span a.flag-action{background:url(../images/star_un.png) no-repeat left center;}
+	#xin_image  .ebook_main span a.unflag-action{background:url(../images/star_on.png) no-repeat left center;}
+/*页码*/
+.booklet  .right_pager,.booklet  .left_pager{ background:#7ACDC8;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px; font-family:Arial; font-weight:bold; color:#ffffff; padding:3px 5px; font-size:14px; position:absolute; bottom:10px;}
+.booklet  .right_pager{ right:10px;}
+.booklet  .left_pager{ left:10px;}

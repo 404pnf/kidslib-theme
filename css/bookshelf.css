@@ -14,17 +14,14 @@
 /*top clssify*/
 .top_bookshelf{ width:935px; height:65px; line-height:65px; display:block}
 .top_bookshelf li { float:left}
-.top_bookshelf li a{ background:url(../images/bookrack.jpg) no-repeat; display:block; width:167px; height:50px; font-size:23px; color:#ffffff; font-family:"DFHaibaoW12"; line-height:50px; text-align:center; margin-top:8px; margin-left:60px;}
-.top_bookshelf li a:hover{ background:url(../images/bookrack_s.jpg)}
-.top_bookshelf li a.top_nav_s{ background:url(../images/bookrack_s.jpg) no-repeat}
+.top_bookshelf li a{ background:url(../images/bookrack_c.jpg) no-repeat; display:block; width:137px; height:50px; font-size:23px; color:#ffffff; font-family:"DFHaibaoW12"; line-height:50px; text-align:center; margin-top:8px; margin-right:10px; margin-left:0!important}
+.top_bookshelf li a:hover{ background:url(../images/bookrack_c_s.jpg)}
+.top_bookshelf li a.top_nav_s{ background:url(../images/bookrack_c_s.jpg) no-repeat}
 /*booklist*/
-ul.book_list li:nth-of-type(7) { margin-left:22px;}
-ul.book_list li:nth-of-type(13) { margin-left:32px;}
-.book_list{ width:870px; margin-top:15px;}
-.book_list li{  float:left; position:relative; display:block}
-.book_list li img{  display:block; float:left; position:relative; margin-right:10px; margin-bottom:25px; width:126px; height:119px;}
-.book_list li span{ position: absolute;left: 40px; top: 90px; font-family:"DFHaibaoW12"; font-size:18px; color:#ffffff; z-index:999;}
-.book_list li span.flag-favorite-87 a{  position: absolute;right:15px; bottom:30px; width:22px; height:22px; display:block; background:url(../images/close_02.png) no-repeat}/*收藏书删除*/
+.bookmarks .book_list li span.ebook_name{ background:none!important}
+.bookmarks .book_list li  a{visibility:visible!important; }/*ebook name*/
+.bookmarks .book_list li span.flag-wrapper{ background:url(../images/close_02.png) no-repeat;width:22px; height:22px; display:block; position: absolute;right: 20px;top: 15px;}
+.bookmarks .book_list li span.flag-wrapper a{   display:block;  width:22px!important; height:22px!important; margin-top:0!important;filter: Alpha(Opacity=0);opacity: 0.0;left:0!important}/*收藏书删除*/
 .book_list li div{position: absolute; display: none; left:85px; top:10px;width:386px; height:343px; display:none ; z-index:1000}
 .book_list li div a{ font-family:"DFHaibaoW12"; font-size:25px;padding-top:250px; text-align:center; color:#ffffff; display:block; width:295px; padding-left:60px; line-height:150%;}
 .classify_name{ position:absolute; bottom:200px; right:65px; font-size:22px; font-family:"DFHaibaoW12"; color:#ffffff;}

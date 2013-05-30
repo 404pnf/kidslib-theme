@@ -241,9 +241,11 @@ function ilearning_theme(&$existing, $type, $theme, $path){
       'render element' => 'form', 
       //'preprocess functions' => array('ilearning_preprocess_user_login'),	  
   );
-  //$hooks['user_register_name'] = array (
-  //   'variables' => array('content' => NULL),
-  //);
+  $hooks['user_pass'] = array (
+  	 'template' => 'user-pass',
+  	 'render element' => 'form', 
+     //'variables' => array('content' => NULL),
+  );
    
   return $hooks;
 }
@@ -308,11 +310,13 @@ function ilearning_captcha($variables) {
 
 function ilearning_preprocess_user_login(&$variables) {  
  //drupal_set_message('123456');
- //print debug($variables['form']['name']);
+ //print_r ($variables['form']['name']);
  // $variables['name'] = drupal_render($variables['form']['name']);
  // $variables['pass'] = drupal_render($variables['form']['pass']);
- $variables['login'] = drupal_render($variables['form']['actions']['submit']);
- unset($variables['form']['links']);
+ //$variables['login'] = drupal_render($variables['form']['actions']['submit']);
+	$variables['login'] = drupal_render($variables['form']['actions']['submit']);
+	
+    unset($variables['form']['links']);
  //$variables['links'] = drupal_render($variables['form']['links']);
  // $variables['hidden'] = drupal_render_children($variables['form']);
 }
@@ -321,21 +325,53 @@ function ilearning_form_user_login_alter(&$form, &$form_state) {
    //drupal_set_message('123456');
    $form['name']['#theme_wrappers'] = array();
    $form['pass']['#theme_wrappers'] = array();
-   //$form['actions']['submit']['#value'] = t('');
+
    //print debug($form);
 }
 
 
-//previous || next node which in the standard node type
-function node_sibling($node, $dir = 'next', $prepend_text = '', $append_text = '', $next_node_text = NULL) {
-	$query = 'SELECT n.nid, n.title FROM {node} n WHERE '
-			. 'n.created ' . ($dir == 'prev' ? '<' : '>') . ' :created AND n.type = :type AND n.status = 1 '
-			. "AND language IN (:lang, 'und') "
-			. 'ORDER BY n.created ' . ($dir == 'prev' ? 'DESC' : 'ASC') . ' LIMIT 1';
-	//use fetchObject to fetch a single row
-	$row = db_query($query, array(':created' => $node->created, ':type' => $node->type, ':lang' => $node->language))->fetchObject();
+function ilearning_preprocess_user_pass(&$variables) {
+	$variables['pass'] = drupal_render($variables['form']['actions']['submit']);		
+	unset($variables['form']['links']);
+}
 
-	if ($row) {
+function ilearning_form_user_pass_alter(&$form, &$form_state) {
+	$form['name']['#theme_wrappers'] = array();
+}
+
+
+/* 
+$query = db_select('node', 'n');
+$query->leftJoin('field_data_field_display_type', 'type', 'type.field_display_type_value = \'all\'');
+$_gallery = $query->fields('n',array('nid'))
+             ->condition('n.type', 'gallery')
+             ->where('n.nid = type.entity_id')
+             ->orderBy('changed', 'DESC')
+             ->range(0, 5)
+             ->execute()
+             ->fetchAll(); */
+
+
+
+//previous || next node which in the standard node type
+function node_sibling_nse($node, $dir = 'next', $prepend_text = NULL, $append_text = NULL, $next_node_text = NULL) {
+	$query = 'SELECT n.nid, n.title FROM {node} n
+			  LEFT JOIN  {field_revision_field_ref_to_nse} nse ON nse.entity_id = n.nid WHERE'
+		     	 
+             //. 'nse.field_ref_to_nse_target_id = 99 AND ' 
+	        //SELECT n.nid, n.title FROM node AS n LEFT JOIN field_revision_field_ref_to_nse AS nse ON nse.entity_id = n.nid WHERE nse.field_ref_to_nse_target_id =99 ORDER BY n.nid ASC LIMIT 0 , 30
+             . ' nse.field_ref_to_nse_target_id = :target_id AND'
+		     . ' n.created ' . ($dir == 'next' ? '<' : '>')
+		     . ' :created AND n.type = :type AND n.status = 1 '
+	         //. ' n.type = :type AND n.status = 1 '
+             . ' ORDER BY n.nid ' . ($dir == 'prev' ? 'ASC' : 'DESC')
+	         //. ' ORDER BY n.nid '      
+	         . ' LIMIT 1';
+	//use fetchObject to fetch a single row
+	$row = db_query($query, array(':created' => $node->created, ':type' => $node->type,':target_id'=>$node->field_ref_to_nse['und']['0']['target_id']))->fetchObject();
+    //$row = db_query($query, array(':type' => $node->type,':target_id'=>$node->field_ref_to_nse['und']['0']['target_id']))->fetchObject();
+	 
+	 if ($row) {
 		drupal_add_html_head_link(array(
 		'rel' => $dir,
 		'type' => 'text/html',
@@ -343,11 +379,10 @@ function node_sibling($node, $dir = 'next', $prepend_text = '', $append_text = '
 		// Force the URL to be absolute, for consistency with other <link> tags
 		// output by Drupal.
 		//'href' =>url('node/' . $row->nid, array('absolute' => TRUE)),
-		));
-		
+		));		
 		$text = $next_node_text ? t($next_node_text) : $row->nid;
 		return t($text,array('attributes' => array('rel' => array($dir))));
-	} else {
+	}else{
 		return FALSE;
 	}
 }

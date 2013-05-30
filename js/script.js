@@ -13,32 +13,70 @@
 jQuery.noConflict();
 (function($) { 
 $(function() {
-  //alert('123456');
-  
-    $('.bookshelf_main_bg ul.book_list li.ebook a').click(function(){
-    //alert('123456');
-	 // url = 'http://ilearning.cn';
+
+  //åˆ†ç±»ç”µå­ä¹¦
+  //æ”¶è—
+
+    $('.book_classify .bookshelf_main_bg ul.book_list li.ebook a,.bookmarks .bookshelf_main_bg_1 ul.book_list li.ebook span.ebook_name a').click(function(){
 	  url = this.href;
-      var iWidth=800; //´°¿Ú¿í¶È
-           var iHeight=800;//´°¿Ú¸ß¶È
-           var iTop=(window.screen.height-iHeight)/2;
-           var iLeft=(window.screen.width-iWidth)/2;
+      var iWidth=1200; 
+      var iHeight=window.screen.height-100;
+      var iTop=0;
+      var iLeft=(window.screen.width-iWidth)/2;
      window.open(url,"Detail","Scrollbars=no,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width="+iWidth+" ,Height="+iHeight+",top="+iTop+",left="+iLeft);
 	 return false;
 	 });
-	 $('.bookshelf_main_bg ul.book_list li.video a').click(function(){
-    //alert('123456');
-	 // url = 'http://ilearning.cn';
+   //åˆ†ç±»è§†é¢‘
+    $('.bookmarks .bookshelf_main_bg_1 ul.book_list li.video span.ebook_name a,.book_classify  ul.book_list li.video a').click(function(){
 	  url = this.href;
-      var iWidth=1000; //´°¿Ú¿í¶È
-           var iHeight=1000;//´°¿Ú¸ß¶È
-           var iTop=(window.screen.height-iHeight)/2;
-           var iLeft=(window.screen.width-iWidth)/2;
+      var iWidth=720; 
+      var iHeight=637;
+      var iTop=(window.screen.height-iHeight)/2;
+      var iLeft=(window.screen.width-iWidth)/2;
      window.open(url,"Detail","Scrollbars=no,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width="+iWidth+" ,Height="+iHeight+",top="+iTop+",left="+iLeft);
 	 return false;
 	 });
-    
-// Place your code here.
+    //å›¾ä¹¦æ”¾å¤§
+	$("ul.book_list li a").hover(function() {
+		var s_pa=$(this).closest('li');
+		var s_src= s_pa.find("img").attr("src");
+		s_pa.css("z-index","3")
+		s_pa.nextAll().css("z-index","1")
+		var k = s_src.lastIndexOf('/');
+		var book_name =s_src.substr(k+1,s_src.length);
+		
+		
+		s_pa.find(".big_image").show(300);
+		
+		s_pa.find(".big_image").css("background-image" , "url(/sites/all/themes/ilearning/images/big_book/"+book_name+")");
+		
+		if($("ul.book_list li").index(s_pa)>4){
+			s_pa.find(".big_image").css("top" , "-200px").css("left","30px").css("background-postion","bottom");
+		}
+		
+		}, function() {
+			var s_pa=$(this).closest('li');
+			s_pa.find(".big_image").hide();
+		});
+
+     //åˆ†ç±»å›¾æ ‡é¼ æ ‡activeè·å¾—ç‚¹å‡»åçš„é«˜äº®
+	 var url = window.location + "";
+
+	 var urlCategoryArr = url.match(/(\/\d+\/\d+)(\/\d+)*/);
+	 var first = RegExp.$1 + "";
+	 var last = RegExp.$2 + "";
+
+     
+	 if(first != ""){
+	 $(".top_bookshelf  a").each(function(){
+	     var _href = this.href;
+	     var _indexof = _href.indexOf(first);
+	     if(_indexof != -1){
+	         $(this).addClass("active");
+	     }
+	     
+	 });
+	}
 
 
     

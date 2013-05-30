@@ -1,10 +1,8 @@
 ﻿<?php   ?>
 <div id="register">
-	<div class="input_text font_DFHaibaoW12"><span>用户名: </span><?php print render($form['account']['name']); ?> </div>
-	<div class="input_text font_DFHaibaoW12"><span>邮  箱: </span><?php print render($form['account']['mail']); ?> </div>
-	<div class="input_text_1 font_DFHaibaoW12"><?php print render($form['account']['pass']); ?> </div>
-	<div class="input_text_1 font_DFHaibaoW12"><?php print render($form['captcha']); ?> </div>
-	<div class="input_text_1 font_DFHaibaoW12"><pre><?php print render($form['field_xieyi']); ?></pre></div>
+	<div class="input_text font_DFHaibaoW12"><span>用户名</span><?php print render($form['account']['name']); ?> </div>
+	<div class="input_text font_DFHaibaoW12"><span>邮箱</span><?php print render($form['account']['mail']); ?> </div>
+	<div class="input_text_1 font_DFHaibaoW12 pw"><?php print render($form['account']['pass']); ?> </div>
 	
 </div>
 <div>
