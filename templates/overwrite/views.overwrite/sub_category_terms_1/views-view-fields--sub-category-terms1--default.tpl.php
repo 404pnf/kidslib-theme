@@ -22,23 +22,27 @@
  * - $row: The raw result object from the query, with all data it fetched.
  *  <a href="/ebooklist/category/<?php print arg(2);?>/<?php print arg(3);?>/<?php print $row->tid;?>"><?php print $fields['name']->content;?></a>
  * @ingroup views_templates
+ * print l($name,'ebooklist/category/' . arg(2) . '/' . $fields['tid']->content);
  */
 ?>
 <li>
 
 
 <?php 
-   $category = arg(2);
+      $category = arg(2);
       $age = arg(3);
       $tid = $row->tid;
       $name = $fields['name']->content;
       if (!empty($age)){
-      	    $output .= '<a href="/ebooklist/category/';
+            
+          print l($name,'ebooklist/category/'.$category.'/'.$age.'/'.$tid);
+      	    /* $output .= '<a href="/ebooklist/category/';
       	    $output .=  $category.'/'.$age.'/'.$tid; 
-      	    $output .= '">'.$fields['name']->content.'</a>';
+      	    $output .= '">'.$fields['name']->content.'</a>'; */
       }else{
-        $output .= '<a href="/ebooklist/category/' ;
-        $output .=  $category.'/1/'.$tid.'">'.$fields['name']->content.'</a>';
+          print l($name,'ebooklist/category/'.$category.'/1/'.$tid);
+        /* $output .= '<a href="/ebooklist/category/' ;
+        $output .=  $category.'/1/'.$tid.'">'.$fields['name']->content.'</a>'; */
       } 
       print $output;  
 ?>

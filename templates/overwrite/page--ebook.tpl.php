@@ -1,7 +1,5 @@
 
-
-
-<div id="ebook_wrapper" class="repeat_bg">
+<div class="repeat_bg">
  <?php print render($page['highlighted']); ?>
  <?php print $messages; ?>
  <?php print render($page['help']); ?>

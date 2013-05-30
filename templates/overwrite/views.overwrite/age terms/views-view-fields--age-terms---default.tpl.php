@@ -20,12 +20,21 @@
  *   - $field->label_html: The full HTML of the label to use including
  *     configured element type.
  * - $row: The raw result object from the query, with all data it fetched.
- *
+ *<a onclick="changeBg(this)" href="/ebooklist/category/<?php print arg(2);?>/<?php print $fields['tid']->content;?>"><?php print $fields['name']->content;?></a>
  * @ingroup views_templates
  */
 ?>
 <ul id="classify_nav">
   <li>
-    <a onclick="changeBg(this)" href="/ebooklist/category/<?php print arg(2);?>/<?php print $fields['tid']->content;?>"><?php print $fields['name']->content;?></a>
+    <?php 
+           $name = $fields['name']->content;
+           //$tid = $fields['tid']->content;
+           //$arg2 = arg(2);
+           //$output = 'ebooklist/category/';
+          // $output .= $arg(2).'/'.$tid; 
+           print l($name,'ebooklist/category/' . arg(2) . '/' . $fields['tid']->content);
+         
+     ?>
+    
   </li>
 </ul>  

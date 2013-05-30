@@ -25,9 +25,17 @@
  */
 ?>
 <div class="ebook_main">
-<?php print $fields['field_xin_kewenneirong']->content;?>
+     <?php print $fields['field_xin_kewenneirong']->content;?>
+     <?php print $fields['ops']->content;?>
+   <div id= "ebook_op">
+   
+     <?php
+         $audio_url =  $fields['field_xin_audio']->content;
+         $audio_mp3 ="<a id='xin_audio_player' href="."$audio_url"."></a>";
+         print $audio_mp3;
+ 	  ?>
+    
+    </div>
 </div>
 
-<div clas= "ebook_op">
-<?php print $fields['field_xin_audio']->content;?>
-</div>
+

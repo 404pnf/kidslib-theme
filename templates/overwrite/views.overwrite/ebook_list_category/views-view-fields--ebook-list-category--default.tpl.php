@@ -25,7 +25,7 @@
  */
 ?>
 <li class="<?php print $fields['type']->content; ?>">
-
+  <div class="big_image"><?php print $fields['title']->content; ?></div>
 <?php 
 
     $bg_arr = ilearning_get_shuffle_array();
@@ -47,4 +47,7 @@
    print $output;  
 ?>
 
+
 </li>
+
+

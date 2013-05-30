@@ -8,10 +8,10 @@
 (function ($) {
 	$(document).bind('flagGlobalAfterLinkUpdate', function(event, data) {
 		
-	  if (data.flagName == 'favorite' && data.flagStatus == 'unflagged') {
+	  if (data.flagName == 'zuoyouxi' && data.flagStatus == 'unflagged') {
 		  
-	    if ($(data.link).parents('.ebook,.video').size()) { // Are we inside the view?		    
-	    	$(data.link).parents('.ebook,.video').hide('slow');
+	    if ($(data.link).parents('.zyx').size()) { // Are we inside the view?		    
+	    	$(data.link).parents('.zyx').hide('slow');
 	   }
 	   // if ($(data.link).parents('.video').size()) { // Are we inside the view?		    
 //	    	$(data.link).parents('.video').hide('slow');
@@ -61,7 +61,7 @@
 <div class="bookshelf_main_bg_1 bookshelf_main_bg fleft">
 	<div class="top_bookshelf">
 		<ul>
-			<li><a class="top_nav_s" style="margin-left: 0">我的收藏</a></li>
+			<li><a href="/user/<?php print $user->uid; ?>/bookmarks">我的收藏</a></li>
             <?php 
 		      //判断新标准听儿歌是否为空,为空则不显示.
 		      $total_numbers =  views_get_view_result('userbookmarks','block_2');
@@ -76,7 +76,7 @@
 		      }   
 		    ?> 
 		    
-		     <?php		   
+            <?php		   
 		      //判断新标准看动画是否为空,为空则不显示.
 		      $total_numbers =  views_get_view_result('userbookmarks','block_1');
               $numbers= count($total_numbers);
@@ -89,22 +89,19 @@
                      print $output;
 		      }  		      
 		   ?>
-
-             <?php 
-		      //判断新标准做游戏是否为空
+		    <?php		   
+		      //判断新标准看动画是否为空,为空则不显示.
 		      $total_numbers =  views_get_view_result('userbookmarks','block_3');
-		      $numbers= count($total_numbers);
-	   
+              $numbers= count($total_numbers);
+
 		      if($numbers==0){
-		   		
-		      }else{
-		   	       $output='<li><a href="/user/';
-		   	       $output.= $user->uid.'/bookmarks/zyx">做游戏</a></li>';
-		   	       print $output; 
-		      }   
-		   ?> 
+		 
+		      }else{ 	
+		            print '<li><a class="top_nav_s" style="margin-left: 0">做游戏</a></li>';
+		      }  		      
+		   ?>
            
-            <?php 
+           <?php 
 		      //判断新标准看一看是否为空
 		      $total_numbers =  views_get_view_result('userbookmarks','block_4');
 		      $numbers= count($total_numbers);
@@ -130,8 +127,7 @@
 		   	       $output.= $user->uid.'/bookmarks/kw">学课文</a></li>';
 		   	       print $output; 
 		      }   
-		   ?> 			
-
+		   ?> 
 		</ul>
 	</div>
   <ul class="book_list">

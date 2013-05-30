@@ -46,6 +46,6 @@
     }
    print $output;  
 ?>
-
+   <div class="big_image"><?php print $fields['title']->content; ?></div>
 
 </li>

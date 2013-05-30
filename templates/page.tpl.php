@@ -4,14 +4,15 @@ if(!empty($node) && $node->type == 'video'){
   include('overwrite/page--video.tpl.php');
    return;
 }
+
 if(!empty($node) && $node->type == 'ceshi'){
   include('overwrite/page--ceshi.tpl.php');   
   return;
 }
 
 if(!empty($node) && $node->type == 'ebook'){
-	include('overwrite/page--ebook.tpl.php');
-	return;
+  include('overwrite/page--ebook.tpl.php');
+  return;
 }
 ?>
 
@@ -20,5 +21,6 @@ if(!empty($node) && $node->type == 'ebook'){
  <?php print $messages; ?>
  <?php print render($page['help']); ?>
  <?php print render($page['content']); ?>
+
 
 </div>

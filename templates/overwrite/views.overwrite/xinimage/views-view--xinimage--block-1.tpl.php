@@ -1,5 +1,6 @@
 
-  <?php if ($rows): ?>
+
+<?php if ($rows): ?>
    
       <?php print $rows; ?>
 

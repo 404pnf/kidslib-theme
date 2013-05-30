@@ -43,4 +43,5 @@
     }
    print $output;  
 ?>
+ <div class="big_image"><?php print $fields['field_xin_unit_number']->content; ?></div>
 </li>

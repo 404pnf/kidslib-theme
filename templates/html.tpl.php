@@ -87,8 +87,9 @@
   <meta http-equiv="cleartype" content="on">
 
   <?php print $styles; ?>
+
   <?php print $scripts; ?>
-  <?php if ($add_respond_js): ?>
+    <?php if ($add_respond_js): ?>
     <!--[if lt IE 9]>
     <script src="<?php print $base_path . $path_to_zen; ?>/js/html5-respond.js"></script>
     <![endif]-->

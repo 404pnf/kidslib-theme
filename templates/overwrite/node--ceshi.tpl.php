@@ -1,23 +1,33 @@
-
 <link href="/sites/all/themes/ilearning/jplayer/prettify-jPlayer.css" rel="stylesheet" type="text/css" />
 <link href="/sites/all/themes/ilearning/jplayer/jplayer.pink.flag.css" rel="stylesheet" type="text/css" />
-
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script type="text/javascript" src="/sites/all/libraries/jplayermp3/jquery.jplayer.min.js"></script>
 <script type="text/javascript" src="/sites/all/libraries/jplayermp3/jquery.jplayer.inspector.js"></script>
 <script type="text/javascript" src="/sites/all/libraries/jplayermp3/themeswitcher.js"></script>
 <script type="text/javascript" src="/sites/all/themes/ilearning/js/hiddenShow.js"></script>
 <script type="text/javascript">
-function onclick_right(){ 
-    var an = document.getElementById("answer");
+function onclick_right(a){
+	for(var i=1;i<=4;i++){
+		document.getElementById("ceshi_an_word_"+i).className="u_bg"
+		}
+	var an = document.getElementById("answer");
+	var an_word = document.getElementById("answer_word");
+	
+	a.className="s_bg";
     an.className="answer_right answer fleft";
-
+	an_word.className="answer_word_r answer_word fleft";
 	
 }
-function onclick_wrong(){ 
+function onclick_wrong(b){
+	for(var i=1;i<=4;i++){
+		document.getElementById("ceshi_an_word_"+i).className="u_bg"
+		}
     var an = document.getElementById("answer");
+	var an_word = document.getElementById("answer_word");
+	
+	b.className="s_bg";
     an.className="answer_wrong answer fleft";
-
+	an_word.className="answer_word_w answer_word fleft";
 	
 }
 </script>
@@ -61,14 +71,15 @@ $(document).ready(function(){
 		</div>
 	</div>
 	
+	
 	<div class="title">
-
-		<a class="title_name font_DFHaibaoW12" href="#">
-		 <?php 
+        <a class="font_DFHaibaoW12 title_left">测一测</a>
+		<a class="title_name font_DFHaibaoW12">
+		    <?php 
 		         $unit =  views_embed_view("xinimage","unit",$node->nid);
 		         print $unit;
 		     ?>
-		</a>
+		 </a>
 	</div>
 </div>
 
@@ -101,17 +112,44 @@ $(document).ready(function(){
       //print render($content);
      
     ?>
-       <div class="word_box fleft">
-			<ul>
+    <div class="fleft">
+    <!---选项区---->
+       <div class="word_box">
+			<ul id="word_list_a">
         <?php 
-          
-           $answer0 .='<li><a onclick="onclick_right();" href="#">'.$node->field_xuanxiang['und'][0]['value'].'</a></li>';
-           $answer1 .='<li><a onclick="onclick_wrong();" href="#">'.$node->field_xuanxiang['und'][1]['value'].'</a></li>';            
-           $answer2 .='<li><a onclick="onclick_wrong();" href="#">'.$node->field_xuanxiang['und'][2]['value'].'</a></li>';
-           //判断第四个答案是否为空，为空则不输出任何东西
-           if (!empty($node->field_xuanxiang['und'][3]['value'])){
-                    $answer3 .='<li><a onclick="onclick_wrong();" href="#">'.$node->field_xuanxiang['und'][3]['value'].'</a></li>';                    
+           //需要判断选项的长短,最长的单词为10个字母,最长的短语加上空格为14个字母
+           $an0=$node->field_xuanxiang['und'][0]['value'];
+           
+           if(strlen($an0)>=10&&strlen($an0)<=16){
+               $answer0 ='<li class="toolong"><a id="ceshi_an_word_1" onclick="onclick_right(this);" href="#">'.$an0.'</a></li>';
+             }else{
+               $answer0 = '<li><a  id="ceshi_an_word_1" onclick="onclick_right(this);" href="#">'.$an0.'</a></li>';
+             }
+
+           $an1=$node->field_xuanxiang['und'][1]['value'];
+           if(strlen($an1)>=10&&strlen($an1)<=16){
+               $answer1 ='<li class="toolong"><a  id="ceshi_an_word_2" onclick="onclick_wrong(this);" href="#">'.$an1.'</a></li>';
+            }else{
+           	   $answer1 ='<li><a  id="ceshi_an_word_2" onclick="onclick_wrong(this);" href="#">'.$an1.'</a></li>';
+            }
+           
+           $an2=$node->field_xuanxiang['und'][2]['value'];
+           if(strlen($an2)>=10&&strlen($an2)<=16){
+           	$answer2 ='<li class="toolong"><a  id="ceshi_an_word_3" onclick="onclick_wrong(this);" href="#">'.$an2.'</a></li>';
+           }else{
+           	$answer2 ='<li><a  id="ceshi_an_word_3" onclick="onclick_wrong(this);" href="#">'.$an2.'</a></li>';
            }
+           
+           $an3=$node->field_xuanxiang['und'][3]['value'];
+           if(strlen($an3)>=10&&strlen($an3)<=16){
+           	$answer3 ='<li class="toolong"><a  id="ceshi_an_word_4" onclick="onclick_wrong(this);" href="#">'.$an3.'</a></li>';
+           }else{
+           	$answer3 ='<li><a  id="ceshi_an_word_4" onclick="onclick_wrong(this);" href="#">'.$an3.'</a></li>';
+           }
+           //$answer1 .='<li><a onclick="onclick_wrong();" href="#">'.$node->field_xuanxiang['und'][1]['value'].'</a></li>';            
+           //$answer2 .='<li><a onclick="onclick_wrong();" href="#">'.$node->field_xuanxiang['und'][2]['value'].'</a></li>';
+           //$answer3 .='<li><a onclick="onclick_wrong();" href="#">'.$node->field_xuanxiang['und'][3]['value'].'</a></li>';                    
+         
            $arr=array($answer0,$answer1,$answer2,$answer3);           
            shuffle($arr);
            //print_r ($arr);
@@ -122,13 +160,9 @@ $(document).ready(function(){
          ?> 
         </ul>
 		</div>
-
-
-		<div class="question fleft">   
-    <?php  print render($content['field_answer_image']); ?>
-    </div>
-		<div id="answer" class="answer fleft"></div>
-		<div class="op_box fleft">
+     <!---选项区结束---->
+     <!---播放器区---->
+		<div class="op_box">
 			<div class="oh">
 				<div id="jquery_jplayer_1" class="jp-jplayer"></div>
 
@@ -138,37 +172,15 @@ $(document).ready(function(){
 							<ul class="jp-controls">
 								<li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
 								<li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-								<!--<li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>-->
 								<li><a href="javascript:;" class="jp-mute" tabindex="1"
 									title="mute">mute</a></li>
 								<li><a href="javascript:;" class="jp-unmute" tabindex="1"
 									title="unmute">unmute</a></li>
-								<li><a href="javascript:;" class="jp-volume-max" tabindex="1"
-									title="max volume">max volume</a></li>
 							</ul>
-							<!--<div class="jp-progress">
-								<div class="jp-seek-bar">
-									<div class="jp-play-bar"></div>
-
-								</div>
-							</div>-->
 							<div class="jp-volume-bar">
 								<div class="jp-volume-bar-value"></div>
 							</div>
-							<!--<div class="jp-current-time"></div>
-							<div class="jp-duration"></div>
-							<ul class="jp-toggles">
-								<li><a href="javascript:;" class="jp-repeat" tabindex="1"
-									title="repeat">repeat</a></li>
-								<li><a href="javascript:;" class="jp-repeat-off" tabindex="1"
-									title="repeat off">repeat off</a></li>
-							</ul>-->
 						</div>
-						<!--<div class="jp-title">
-							<ul>
-								<li>Cro Magnon Man</li>
-							</ul>
-						</div>-->
 						<div class="jp-no-solution">
 							<span>Update Required</span> To play the media you will need to
 							either update your browser to a recent version or update your <a
@@ -186,12 +198,14 @@ $(document).ready(function(){
                        
        </div>
 			<div class="fclear oh">
+
 			  
         <?php
-            
-                   
-                     $older = node_sibling($node,'prev',NULL,NULL,NULL); 
-                     $newer = node_sibling($node,'next',NULL,NULL,NULL);
+                     //$targetid=$node->field_ref_to_nse['und']['0']['target_id'];
+                     //print $target_id;
+                     $newer = node_sibling_nse($node,'next',NULL,NULL,NULL); 
+                     $older = node_sibling_nse($node,'prev',NULL,NULL,NULL); 
+                     
                      if (!empty ($older)){                 
                         $output_older ="<a class='pre font_mrosoftYHB fleft' href="."$older".">".上一题."</a>";
                         
@@ -200,13 +214,20 @@ $(document).ready(function(){
                      if (!empty($newer)){
                         $output_newer ="<a class='next font_mrosoftYHB fleft' href="."$newer".">".下一题."</a>";
                        
-                    }
-                    print $output_newer;
+                     }
+                     print $output_newer;
                
          ?>
         </div>
 
 		</div>
+	<!---播放器区结束---->
+    </div>
+		<div class="question fleft">   
+    <?php  print render($content['field_answer_image']); ?>
+    </div>
+		<div id="answer" class="answer fleft"></div>
+		<div id="answer_word" class="answer_word  fleft"></div>
 
 
 	</div>

@@ -8,10 +8,10 @@
 (function ($) {
 	$(document).bind('flagGlobalAfterLinkUpdate', function(event, data) {
 		
-	  if (data.flagName == 'favorite' && data.flagStatus == 'unflagged') {
+	  if (data.flagName == 'xbz_favorites' && data.flagStatus == 'unflagged') {
 		  
-	    if ($(data.link).parents('.ebook,.video').size()) { // Are we inside the view?		    
-	    	$(data.link).parents('.ebook,.video').hide('slow');
+	    if ($(data.link).parents('.kw').size()) { // Are we inside the view?		    
+	    	$(data.link).parents('.kw').hide('slow');
 	   }
 	   // if ($(data.link).parents('.video').size()) { // Are we inside the view?		    
 //	    	$(data.link).parents('.video').hide('slow');
@@ -61,7 +61,7 @@
 <div class="bookshelf_main_bg_1 bookshelf_main_bg fleft">
 	<div class="top_bookshelf">
 		<ul>
-			<li><a class="top_nav_s" style="margin-left: 0">我的收藏</a></li>
+			<li><a href="/user/<?php print $user->uid; ?>/bookmarks">我的收藏</a></li>
             <?php 
 		      //判断新标准听儿歌是否为空,为空则不显示.
 		      $total_numbers =  views_get_view_result('userbookmarks','block_2');
@@ -90,7 +90,7 @@
 		      }  		      
 		   ?>
 
-             <?php 
+		     <?php 
 		      //判断新标准做游戏是否为空
 		      $total_numbers =  views_get_view_result('userbookmarks','block_3');
 		      $numbers= count($total_numbers);
@@ -103,8 +103,8 @@
 		   	       print $output; 
 		      }   
 		   ?> 
-           
-            <?php 
+
+		   <?php 
 		      //判断新标准看一看是否为空
 		      $total_numbers =  views_get_view_result('userbookmarks','block_4');
 		      $numbers= count($total_numbers);
@@ -117,20 +117,19 @@
 		   	       print $output; 
 		      }   
 		   ?> 
-
+            
             <?php 
-		      //判断学课文是否为空
+		      //判断新标准看一看是否为空
 		      $total_numbers =  views_get_view_result('userbookmarks','block_5');
 		      $numbers= count($total_numbers);
 	   
 		      if($numbers==0){
 		   		
 		      }else{
-		   	       $output='<li><a href="/user/';
-		   	       $output.= $user->uid.'/bookmarks/kw">学课文</a></li>';
-		   	       print $output; 
+		   	    print '<li><a class="top_nav_s" style="margin-left: 0">学课文</a></li>';
 		      }   
-		   ?> 			
+		   ?> 
+
 
 		</ul>
 	</div>

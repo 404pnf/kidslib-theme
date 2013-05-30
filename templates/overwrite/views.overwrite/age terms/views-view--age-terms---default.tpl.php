@@ -20,16 +20,6 @@
   * the view is modified.
   */
 ?>
-  <script type="text/javascript" language="javascript">
-function changeBg(obj){
-	alert("h")
-    var str=document.getElementById("classify_nav").getElementsByTagName("li");
-	alert(str);
-    for(var i=0;i<str.length;i++){
-    str[i].getElementsByTagName("a").className="";
-    }
-          obj.className="top_nav_s";
-}
 </script>
 
   <?php if ($rows): ?>

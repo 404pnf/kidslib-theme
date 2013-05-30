@@ -4,7 +4,7 @@
        $xiaoceshi .= " class="."unit_m5";
        $xiaoceshi .= " onclick=";
        $xiaoceshi .= "ShowDialog('/node/".$output."',1400,1000);";
-       $xiaoceshi .= ">5.小测试</a>";;
+       $xiaoceshi .= ">5.测一测</a>";;
        print $xiaoceshi;
      ?>
 
