@@ -6,6 +6,7 @@
 <script src="/sites/all/themes/ilearning/booklet/jquery.easing.1.3.js" type="text/javascript"></script>
 <script src="/sites/all/themes/ilearning/booklet/jquery.booklet.1.4.0.min.js" type="text/javascript"></script>
 <link href="/sites/all/themes/ilearning/booklet/jquery.booklet.1.4.0.css" type="text/css" rel="stylesheet" media="screen, projection, tv" />
+ 
 <link href="/sites/all/themes/ilearning/css/ebook_jplayer.css" rel="stylesheet" type="text/css" />
 <script src="/sites/all/themes/ilearning/js/jplayer_book.js" type="text/javascript"></script>
 <script type="text/javascript">
