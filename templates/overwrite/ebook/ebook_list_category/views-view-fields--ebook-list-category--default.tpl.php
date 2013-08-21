@@ -25,6 +25,9 @@
  */
 ?>
 <li class="<?php print $fields['type']->content; ?>">
+<?php
+
+ ?>
   <div class="big_image"><?php print $fields['title']->content; ?></div>
 <?php 
 
@@ -40,7 +43,18 @@
     if ($type == "video"){
      	$output .= '<img src="';	
  		$output .= $base_path.$theme_path.'/images/tv_'.$bg_arr[$counter-1].'.png"/>'.$name;
-    }else{  
+    }
+	elseif ($type == "book"){
+	    $result = views_embed_view('get_book_id', 'default', $fields['nid']->content);
+        $book_id = trim(strip_tags($result));
+       //print $fields['nid']->content;
+        //print $book_id;
+		$name = trim(strip_tags($name));
+		$name = '<span>' .l($name, 'sites/default/files/bilingual/' . $book_id . '.html') .'</span>';
+     	$output .= '<img src="';	
+ 		$output .= $base_path.$theme_path.'/images/book_'.$bg_arr[$counter-1].'.png"/>'.$name;
+    }
+	else{  
     	$output .= '<img src="';
         $output .= $base_path.$theme_path.'/images/book_'.$bg_arr[$counter-1].'.png"/>'.$name;  
     }

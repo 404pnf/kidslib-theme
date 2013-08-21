@@ -112,8 +112,6 @@ $(document).ready(function(){
                  //追进页码和音频到空数组中
                  array_push($arr,$pnumber,$ebook_audio);
             }
-           
-           
          $pnumber = $pnumber-1;  
          if($pnumber != 0){   
            if ($pnumber%2==0){
@@ -133,32 +131,13 @@ $(document).ready(function(){
         print '</div>';
         }
            //每张图片的具体长度和宽度
-         
-
-          
-           
-        
-        
-
-
-          
-           
     ?>
   
   </div>
  
-  <?php
-    // Remove the "Add new comment" link on the teaser page or if the comment
-    // form is being displayed on the same page.
-    if ($teaser || !empty($content['comments']['comment_form'])) {
-      unset($content['links']['comment']['#links']['comment-add']);
-    }
-    // Only display the wrapper div if there are links.
-    $links = render($content['links']);
-    if ($links):
-  ?>
+    <?php print $links; ?>
+
     <div class="link-wrapper">
-      <?php print $links; ?>
       <?php
            array_push($arrimg,$ebooksize[0],$ebooksize[1]);
            $outputimg = '<div id="imgsize"style="display:none">';
@@ -209,9 +188,6 @@ $(document).ready(function(){
 		</div>
       
     </div>
-   
-  <?php endif; ?>
-
   <?php print render($content['comments']); ?>
   
 </div>
