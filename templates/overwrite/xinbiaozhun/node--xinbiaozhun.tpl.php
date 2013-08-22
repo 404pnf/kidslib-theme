@@ -52,7 +52,8 @@ function ShowDialog(url,w,h) {
         <li><a class='unit_m3' href='/xin/kandonghua/$nid' onclick=ShowDialog_video('/xin/kandonghua/$nid'); >3.看动画</a></li>
         <li><a  class='unit_m4' href='/xin/zuoyouxi/$nid' onclick=ShowDialog_video('/xin/zuoyouxi/$nid'); >4.做游戏</a>';</li>
         <li><a href=''>$xiaoceshi</a></li>
-        <li><a class='unit_m6' href='/xin/tuozhan/$nid' onclick=ShowDialog_video('/xin/tuozhan/$nid');>6.看一看</a></li>";
+        <li><a class='unit_m6' href='/xin/tuozhan/$nid' onclick=ShowDialog_video('/xin/tuozhan/$nid');>6.看一看</a></li>"
+        ; // ends print
 		?>
         </ul>
     </div>
