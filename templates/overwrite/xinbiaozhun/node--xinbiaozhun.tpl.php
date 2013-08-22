@@ -50,10 +50,10 @@ function ShowDialog(url,w,h) {
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
     <div class="unit_bg">
         <ul class="unit_nav_classify">
-        <li><a class="unit_m1" onclick="ShowDialog_da('/xin/image/<?php print $node->nid ?>'); >1.学课文</a></li>
-        <li><a class="unit_m2" onclick="ShowDialog_video('/xin/tingerge/<?php print $node->nid ?>') ); >2.听儿歌</a></li>
-        <li><a class="unit_m3" onclick="ShowDialog_video('/xin/kandonghua/<?php print $node->nid ?>'); >3.看动画</a></li>
-        <li><a  class="unit_m4" onclick="ShowDialog_video('/xin/zuoyouxi/<?php print $node->nid ?>'); >4.做游戏</a>";</li>
+        <li><a class="unit_m1" onclick=ShowDialog_da('/xin/image/<?php print $node->nid ?>'); >1.学课文</a></li>
+        <li><a class="unit_m2" onclick=ShowDialog_video('/xin/tingerge/<?php print $node->nid ?>') ); >2.听儿歌</a></li>
+        <li><a class="unit_m3" onclick=ShowDialog_video('/xin/kandonghua/<?php print $node->nid ?>'); >3.看动画</a></li>
+        <li><a  class="unit_m4" onclick=ShowDialog_video('/xin/zuoyouxi/<?php print $node->nid ?>'); >4.做游戏</a>";</li>
         <li><?php $xiaoceshi =  views_embed_view("xinimage","geturl",$node->nid); print $xiaoceshi;?></li>
         <li><a class="unit_m6" onclick=ShowDialog_video('/xin/tuozhan/<?php print $node->nid ?>');>6.看一看</a></li>
         </ul>
