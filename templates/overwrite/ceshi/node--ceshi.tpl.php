@@ -66,21 +66,27 @@
 <div id="node-<?php print $node->nid; ?>"
 	class="<?php print $classes; ?> clearfix" <?php print $attributes; ?>>
 
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2 <?php print $title_attributes; ?>>
-		<a href="<?php print $node_url; ?>"><?php print $title; ?></a>
-	</h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
   <div class="content clearfix" <?php print $content_attributes; ?>>
 
     <div class="fleft">
-    <!---选项区---->
-       <div class="word_box">
+    	<div class="word_box">
 			<ul id="word_list_a">
-        <?php
+				<?php
+					for ($i = 0; $i <= 3; $i++) {
+						$word = $node->field_xuanxiang['und'][$i]['value'];
+						$len = strlen($word);
+						if( $len >= 10 && $len <= 16 ) {
+							print "<li class='toolong'><a id='ceshi_an_word_$i' onclick='onclick_right(this);' href='#'>$word</a></li>";
+							}
+						else {
+							print "<li><a id='ceshi_an_word_$i' onclick='onclick_right(this);' href='#'>$word</a></li>";
+						}
+					}
+				?>
+       		 </ul>
+		</div>
+
+        <?php /* 这个代码太不DRY了！！！上面的替代它了
            //需要判断选项的长短,最长的单词为10个字母,最长的短语加上空格为14个字母
            $an0=$node->field_xuanxiang['und'][0]['value'];
 
@@ -106,24 +112,20 @@
 
            $an3=$node->field_xuanxiang['und'][3]['value'];
            if(strlen($an3)>=10&&strlen($an3)<=16){
-           	$answer3 ='<li class="toolong"><a  id="ceshi_an_word_4" onclick="onclick_wrong(this);" href="#">'.$an3.'</a></li>';
-           }else{
-           	$answer3 ='<li><a  id="ceshi_an_word_4" onclick="onclick_wrong(this);" href="#">'.$an3.'</a></li>';
+           		$answer3 ='<li class="toolong"><a  id="ceshi_an_word_4" onclick="onclick_wrong(this);" href="#">'.$an3.'</a></li>';
+           		}
+           else {
+           		$answer3 ='<li><a  id="ceshi_an_word_4" onclick="onclick_wrong(this);" href="#">'.$an3.'</a></li>';
            }
-           //$answer1 .='<li><a onclick="onclick_wrong();" href="#">'.$node->field_xuanxiang['und'][1]['value'].'</a></li>';
-           //$answer2 .='<li><a onclick="onclick_wrong();" href="#">'.$node->field_xuanxiang['und'][2]['value'].'</a></li>';
-           //$answer3 .='<li><a onclick="onclick_wrong();" href="#">'.$node->field_xuanxiang['und'][3]['value'].'</a></li>';
 
            $arr=array($answer0,$answer1,$answer2,$answer3);
-           shuffle($arr);
+           shuffle($arr); // php中直接就改变了$arr了！
            //print_r ($arr);
-           foreach ($arr as $output){
-           	echo $output;
-           }
-
+           foreach ($arr as $output) {
+           		echo $output; }
+        */
          ?>
-        </ul>
-		</div>
+
      <!---选项区结束---->
      <!---播放器区---->
 		<div class="op_box">
@@ -185,7 +187,7 @@
         </div>
 
 		</div>
-	<!---播放器区结束---->
+
     </div>
 	<div class="question fleft">
     <?php  print render($content['field_answer_image']); ?>
