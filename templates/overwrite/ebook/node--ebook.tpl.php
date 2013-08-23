@@ -1,4 +1,4 @@
-<script src="/sites/all/themes/ilearning/booklet/jquery.min.js" type="text/javascript"></script>
+<?php /* <script src="/sites/all/themes/ilearning/booklet/jquery.min.js" type="text/javascript"></script>
 <script src="/sites/all/themes/ilearning/booklet/jquery-ui.min.js" type="text/javascript"></script>
 <script src="/sites/all/libraries/jplayer/jquery.jplayer.min.js" type="text/javascript" ></script>
 <script src="/sites/all/themes/ilearning/booklet/jquery-ui-1.8.21.custom.min.js" type="text/javascript"></script>
@@ -37,7 +37,8 @@
 		});
 	});
 </script>
-
+*/
+?>
   <div id="ebook-wrapper">
     	<?php
       	$page_counter = count($node->field_page_content['und']);
