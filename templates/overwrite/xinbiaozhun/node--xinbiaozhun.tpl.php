@@ -1,5 +1,6 @@
 <script type="text/javascript" src="/sites/all/themes/ilearning/js/hiddenShow.js"></script>
 
+<?php /*
 <script language="javascript" type="text/javascript">
 function ShowDialog_video(url) {
        var iWidth=800; //窗口宽度
@@ -23,7 +24,7 @@ function ShowDialog(url,w,h) {
        window.open(url,"Detail","Scrollbars=no,Toolbar=no,Location=no,Direction=no,Resizeable=no,Width="+iWidth+" ,Height="+iHeight+",top="+iTop+",left="+iLeft);
       }
 </script>
-
+*/ ?>
 <div class="top pngFix">
     <div class="top_login">
     </div>
@@ -51,7 +52,7 @@ function ShowDialog(url,w,h) {
         <li><a class='unit_m2' href='/xin/tingerge/$nid' onclick=ShowDialog_video('/xin/tingerge/$nid') ); >2.听儿歌</a></li>
         <li><a class='unit_m3' href='/xin/kandonghua/$nid' onclick=ShowDialog_video('/xin/kandonghua/$nid'); >3.看动画</a></li>
         <li><a  class='unit_m4' href='/xin/zuoyouxi/$nid' onclick=ShowDialog_video('/xin/zuoyouxi/$nid'); >4.做游戏</a>';</li>
-        <li><a href=''>$xiaoceshi</a></li>
+        <li>$xiaoceshi</li>
         <li><a class='unit_m6' href='/xin/tuozhan/$nid' onclick=ShowDialog_video('/xin/tuozhan/$nid');>6.看一看</a></li>"
         ; // ends print
 		?>
