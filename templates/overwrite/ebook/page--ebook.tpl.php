@@ -1,4 +1,3 @@
-
 <div class="repeat_bg">
 	 <?php print render($page['highlighted']); ?>
 	 <?php print $messages; ?>

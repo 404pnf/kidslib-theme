@@ -47,6 +47,7 @@ function ShowDialog(url,w,h) {
         <ul class="unit_nav_classify">
         <?php
         $nid = $node->nid ;
+        //$xiaoceshi =  views_embed_view('xinimage','geturl',$nid);
         $xiaoceshi =  views_embed_view('xinimage','geturl',$nid);
         print "<li><a class='unit_m1' href='/xin/image/$nid' onclick=ShowDialog_da('/xin/image/$nid'); >1.学课文</a></li>
         <li><a class='unit_m2' href='/xin/tingerge/$nid' onclick=ShowDialog_video('/xin/tingerge/$nid') ); >2.听儿歌</a></li>

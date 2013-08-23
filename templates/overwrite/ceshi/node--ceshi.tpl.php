@@ -121,8 +121,6 @@
        </div>
 			<div class="fclear oh">
 				<?php
-							 //$targetid=$node->field_ref_to_nse['und']['0']['target_id'];
-							 //print $target_id;
 							 $newer = node_sibling_nse($node,'next',NULL,NULL,NULL);
 							 $older = node_sibling_nse($node,'prev',NULL,NULL,NULL);
 
@@ -139,10 +137,10 @@
 	<div class="question fleft">
     <?php  print render($content['field_answer_image']); ?>
     </div>
-		<div id="answer" class="answer fleft">
-		</div>
-		<div id="answer_word" class="answer_word  fleft">
-		</div>
+	<div id="answer" class="answer fleft">
+	</div>
+	<div id="answer_word" class="answer_word  fleft">
+	</div>
 	</div>
 </div>
 
