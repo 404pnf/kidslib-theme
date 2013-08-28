@@ -49,7 +49,8 @@
            $img_url = json_encode($arrimg);
            print "<div id='imgsize'style='display:none'>$img_url</div>";
 
-           $audio_path = $base_url.'/sites/default/files/ebook/pageaudio/';
+           //$audio_path = $base_url.'/sites/default/files/ebook/pageaudio/';
+           $audio_path = '/sites/default/files/ebook/pageaudio/';
            $audio_name = json_encode(str_replace($base_url.'/sites/default/files/ebook/pageaudio/','',$arr));
            print "<div id='audio_data' style='display:none'>
            				<div id='audio_path'>$audio_path</div>
