@@ -14,7 +14,7 @@
 	    $result = views_embed_view('get_video_vid', 'default', $fields['nid']->content);
       $video_id = trim(strip_tags($result));
 		  $name = trim(strip_tags($name));
-		  $name = '<span>' .l($name, 'video/' . $video_id . '.html') .'</span>';
+		  $name = '<span>' .l($name, 'video/html/' . $video_id . '.html') .'</span>';
      	$output .= '<img src="';	
  		  $output .= $base_path.$theme_path.'/images/tv_'.$bg_arr[$counter-1].'.png"/>'.$name;
     }
