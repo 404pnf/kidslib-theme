@@ -3,8 +3,10 @@
 <?php 
   $bg_arr = ilearning_get_shuffle_array();
   $type = $fields['type']->content;
-  $counter =  $fields['counter']->content;
 	$rows = 15;
+  //$counter =  $fields['counter']->content % $rows;
+  $counter =  ($fields['counter']->content % $rows ) + 1;
+  //print $counter;
 	$page = isset($_REQUEST['page']) ? $_REQUEST['page'] : 0;
 	$counter = $counter - $rows * $page;
     $name = $fields['title']->content;
