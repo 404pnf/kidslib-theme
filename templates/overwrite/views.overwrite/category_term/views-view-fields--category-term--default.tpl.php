@@ -1,1 +1,3 @@
-<?php print $fields['name']->content;?>
+<?php 
+  print $fields['name']->content;
+?>
