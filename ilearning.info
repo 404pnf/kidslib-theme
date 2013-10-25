@@ -1,14 +1,4 @@
-﻿; Drupal's .info files allow themers to easily specify some of the static
-; properties of your theme. Properties such as its name, stylesheets,
-; javascripts, and block regions.
-;
-; Drupal 7 stores a cache of the data in this .info files. If you modify any
-; lines in this file, you MUST refresh Drupal 7's cache by simply visiting the
-; Appearance page at admin/appearance.
-
-; The name, description and screenshot used for this theme on the Appearance
-; page at admin/appearance.
-
+﻿
 screenshot  = screenshot.png
 name        = ilearning
 description = ilearning少儿馆主题
@@ -37,15 +27,15 @@ core        = 7.x
 ; CSS3 media queries: http://www.w3.org/TR/css3-mediaqueries/
 
 ; First we remove the system's menu styling since Zen has its own.
-stylesheets[all][] = system.menus.css
+;stylesheets[all][] = system.menus.css
 
 ; Then we add our own stylesheets.
 stylesheets[all][] = css/common.css
 stylesheets[all][] = css/classify.css
 stylesheets[all][] = css/index.css
-stylesheets[all][] = css/test.css
-stylesheets[all][] = css/ebook.css
-stylesheets[all][] = css/ebook_jplayer.css
+;stylesheets[all][] = css/test.css
+;stylesheets[all][] = css/ebook.css
+;stylesheets[all][] = css/ebook_jplayer.css
 
 ; Built-in conditional stylesheet support has been removed from Zen 7.x-5.x.
 ; Instead, Zen now adds conditional-comment-included classes to the html
