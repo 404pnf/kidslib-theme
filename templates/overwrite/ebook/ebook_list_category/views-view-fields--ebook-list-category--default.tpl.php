@@ -10,6 +10,7 @@
 	$page = isset($_REQUEST['page']) ? $_REQUEST['page'] : 0;
 	$counter = $counter - $rows * $page;
     $name = $fields['title']->content;
+    //$base_path =  base_path();
     $base_path =  base_path();
     $theme_path = path_to_theme();
     if ($type == "video"){
