@@ -1,5 +1,4 @@
 <?php
-/*
 	if(!empty($node) && $node->type == 'video'){
 	  include('overwrite/page--video.tpl.php');
 	   return;
@@ -19,7 +18,6 @@
 	  include('overwrite/page--book.tpl.php');
 	  return;
 	}
-*/
 ?>
 
 <div class="wrapper">

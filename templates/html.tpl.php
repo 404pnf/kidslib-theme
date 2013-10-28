@@ -18,8 +18,8 @@
 
   <?php print $styles; ?>
 
-  	<?php print $scripts;  /* 不要移到body的上面，否则站点很多js不正常工作 */ ?>
-   <?php if ($add_respond_js): ?>
+  <?php print $scripts;  /* 不要移到body的上面，否则站点很多js不正常工作 */ ?>
+  <?php if ($add_respond_js): ?>
     <!--[if lt IE 9]>
     <script src="<?php print $base_path . $path_to_zen; ?>/js/html5-respond.js"></script>
     <![endif]-->
