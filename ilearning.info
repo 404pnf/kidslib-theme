@@ -57,6 +57,7 @@ stylesheets[all][] = css/index.css
 ;scripts[] = js/jquery.booklet.1.4.0.min.js
 ;scripts[] = js/script.js
 ;scripts[] = js/jquery.bookify.js
+scripts[] = js/tian.js
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and
