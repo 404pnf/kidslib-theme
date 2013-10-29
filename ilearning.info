@@ -1,5 +1,4 @@
-﻿
-screenshot  = screenshot.png
+﻿screenshot  = screenshot.png
 name        = ilearning
 description = ilearning少儿馆主题
 
@@ -58,6 +57,8 @@ stylesheets[all][] = css/index.css
 ;scripts[] = js/script.js
 ;scripts[] = js/jquery.bookify.js
 scripts[] = js/tian.js
+scripts[] = js/cj.js
+scripts[] = js/pager.js
 
 
 ; This section lists the regions defined in Zen's default page.tpl.php and
