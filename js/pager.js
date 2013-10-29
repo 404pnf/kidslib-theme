@@ -1,4 +1,4 @@
-var record = 18;//每页显示多少条记录
+var record = 15;//每页显示多少条记录
 var count = 1;//记录总数
 var pageTotal = 1//总页数
 var pagenum = 1;//将要显示的页码
@@ -12,8 +12,7 @@ var pageBegin = (record*(pagenum-1)+1)|0;
 //根据当前要显示的页码取得当前面里最后一条记录的号码
 var pageEnd = record*pagenum;
 
-function initdata(pagenum)
-{
+function initdata(pagenum) {
     var list_obj = document.getElementById("list").getElementsByTagName("li");
     count=list_obj.length;
     pageTotal = ((count+record-1)/record)|0;//总页数

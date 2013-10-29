@@ -23,9 +23,7 @@
 .top_bookshelf li a.active{ background:url(../images/bookrack_s.jpg) no-repeat}
 .top_bookshelf li.top_nav_s{ background:url(../images/bookrack_s.jpg) no-repeat}
 /*booklist*/
-ul.book_list li:nth-of-type(6) { margin-left:22px;}
-ul.book_list li:nth-of-type(11) { margin-left:32px;}
-.book_list{ width:875px; margin-top:8px; height:435px; display:block;}
+.book_list{ width:875px; margin-left:30px; margin-top:8px; height:435px; display:block;}
 .book_list li{  float:left; position:relative; padding-bottom:15px; margin-right:30px;}
 .book_list li img{  display:block; float:left;  height:130px; z-index:1}
 
@@ -71,3 +69,32 @@ ul.book_list li:nth-of-type(11) { margin-left:32px;}
 
 .item-list{  position: absolute; width:635px; right:0; bottom:-80px;}
 .book_list{ position:relative;}
+
+/*  分页 */
+.page {
+    display: block;
+    height: 40px;
+    margin-left: 340px;
+    width: 340px;
+}
+.pager-first {
+    background: url("../images/pager-first-bg.jpg") no-repeat scroll center center transparent;
+}
+.pager-previous {
+    background: url("../images/pager-previous-bg.jpg") no-repeat scroll center center transparent;
+}
+.pager-next {
+    background: url("../images/pager-next-bg.jpg") no-repeat scroll center center transparent;
+}
+.pager-last {
+    background: url("../images/pager-last-bg.jpg") no-repeat scroll center center transparent;
+}
+.pager-first, .pager-previous, .pager-next, .pager-last, .pager-none {
+    display: block;
+    float: left;
+    height: 0;
+    margin-right: 20px;
+    overflow: hidden;
+    padding-top: 25px;
+    width: 30px;
+}
