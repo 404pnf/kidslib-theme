@@ -17,7 +17,8 @@
 	    $result = views_embed_view('get_video_vid', 'default', $fields['nid']->content);
       $video_id = trim(strip_tags($result));
 		  $name = trim(strip_tags($name));
-		  $name = '<span>' .l($name, 'video/html/' . $video_id . '.html') .'</span>';
+		  //$name = '<span>' .l($name, 'video/html/' . $video_id . '.html') .'</span>';
+		  $name = '<span>' .l($name, 'video/html/' . $video_id . '.html',  array('attributes' => array('target' => '_blank'))) .'</span>';
      	$output .= '<img src="';	
  		  $output .= $base_path.$theme_path.'/images/tv_'.$bg_arr[$counter-1].'.png"/>'.$name;
     }
@@ -27,7 +28,7 @@
       //print $fields['nid']->content;
       //print $book_id;
 		  $name = trim(strip_tags($name));
-		  $name = '<span>' .l($name, 'bilingual/' . $book_id . '.html') .'</span>';
+		  $name = '<span>' .l($name, 'bilingual/' . $book_id . '.html',  array('attributes' => array('target' => '_blank'))) .'</span>';
      	$output .= '<img src="';	
  		  $output .= $base_path.$theme_path.'/images/book_'.$bg_arr[$counter-1].'.png"/>'.$name;
     }
@@ -35,7 +36,7 @@
 	    $result = views_embed_view('get_ebook_id', 'default', $fields['nid']->content);
       $ebook_id = trim(strip_tags($result));
 		  $name = trim(strip_tags($name));
-		  $name = '<span>' .l($name, 'ebook/html/' . $ebook_id . '.html') .'</span>';
+		  $name = '<span>' .l($name, 'ebook/html/' . $ebook_id . '.html', array('attributes' => array('target' => '_blank'))) .'</span>';
       //print $ebook_id;
      	$output .= '<img src="';	
  		  $output .= $base_path.$theme_path.'/images/book_'.$bg_arr[$counter-1].'.png"/>'.$name;
@@ -44,7 +45,7 @@
 	    $result = views_embed_view('get_xbz_id', 'default', $fields['nid']->content);
       $xbz_id = trim(strip_tags($result));
 		  $name = trim(strip_tags($name));
-		  $name = '<span>' .l($name, 'xbz/html/' . $xbz_id . '.html') .'</span>';
+		  $name = '<span>' .l($name, 'xbz/html/' . $xbz_id . '.html', array('attributes' => array('target' => '_blank'))) .'</span>';
       //print $xbz_id;
      	$output .= '<img src="';	
  		  $output .= $base_path.$theme_path.'/images/book_'.$bg_arr[$counter-1].'.png"/>'.$name;
