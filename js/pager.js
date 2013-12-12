@@ -22,17 +22,21 @@ function showhiddenRecord(pagenum){
     //document.getElementById('number').innerHTML=pagenum;
     if(pagenum<=1){
        document.getElementById('theFirstPage').innerHTML="<span class=\"pager-none\">第一页</span>";
-        document.getElementById('thePrePage').innerHTML="<span  class=\"pager-none\">上一页</span>";
+       document.getElementById('thePrePage').innerHTML="<span  class=\"pager-none\">上一页</span>";
+       document.getElementById('page_pageTotal').innerHTML=pagenum+"/"+pageTotal;
     }else{
         document.getElementById('theFirstPage').innerHTML="<a href=\"javascript:firstPage()\" class=\"pager-first\">第一页</a>";
         document.getElementById('thePrePage').innerHTML="<a href=\"javascript:prePage()\"  class=\"pager-previous\">上一页</a>";
+        document.getElementById('page_pageTotal').innerHTML=pagenum+"/"+pageTotal;
     }
     if(pagenum>=pageTotal){
         document.getElementById('theNextPage').innerHTML="<span  class=\"pager-none\">下一页</span>";
         document.getElementById('theLastPage').innerHTML="<span  class=\"pager-none\">最后一页</span";
+        document.getElementById('page_pageTotal').innerHTML=pagenum+"/"+pageTotal;
     }else{
         document.getElementById('theNextPage').innerHTML="<a href=\"javascript:nextPage()\"  class=\"pager-next\">下一页</a>";
         document.getElementById('theLastPage').innerHTML="<a href=\"javascript:lastPage()\"  class=\"pager-last\">最后一页</a>";
+        document.getElementById('page_pageTotal').innerHTML=pagenum+"/"+pageTotal;
     }
     //document.getElementById('mySelect').value=pagenum;
     //根据当前要显示的页码取得当前面里第一条记录的号码
