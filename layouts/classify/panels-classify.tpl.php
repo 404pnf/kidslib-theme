@@ -37,6 +37,7 @@
     <span id="thePrePage"><a href="javascript:prePage()">上一页</a></span>
     <span id="theNextPage"><a href="javascript:nextPage()">下一页</a></span>
     <span id="theLastPage"><a href="javascript:lastPage()">最后一页</a></span>
+    <span id="page_pageTotal"></span>
     </div>
 	<!--book list end-->
 </div>

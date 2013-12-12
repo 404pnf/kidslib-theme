@@ -22,7 +22,7 @@ function showhiddenRecord(pagenum){
     //document.getElementById('number').innerHTML=pagenum;
     if(pagenum<=1){
        document.getElementById('theFirstPage').innerHTML="<span class=\"pager-none\">第一页</span>";
-        document.getElementById('thePrePage').innerHTML="<span  class=\"pager-none\">上一页</span";
+        document.getElementById('thePrePage').innerHTML="<span  class=\"pager-none\">上一页</span>";
     }else{
         document.getElementById('theFirstPage').innerHTML="<a href=\"javascript:firstPage()\" class=\"pager-first\">第一页</a>";
         document.getElementById('thePrePage').innerHTML="<a href=\"javascript:prePage()\"  class=\"pager-previous\">上一页</a>";

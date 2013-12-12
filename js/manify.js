@@ -23,7 +23,9 @@
         }
       },function (){
           var s_pa=$(this).closest('li');
-          s_pa.find(".big_image").hide();
+          var ele = s_pa.find(".big_image");
+          ele.stop(true);
+          ele.hide();
         }
      )
   })
