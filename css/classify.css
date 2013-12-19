@@ -98,3 +98,8 @@
     padding-top: 25px;
     width: 30px;
 }
+
+span#page_pageTotal { display:inline-block; background: url(../images/paging.png) no-repeat; font-size:18px; width:65px; height:28px; color:#ffffff; display:inline-block; line-height:28px; text-align: center; font-family:
+"DFHaibaoW12"; }
+
+/*page*/
