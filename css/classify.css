@@ -56,12 +56,12 @@
 .item-list .pager{ /*position:absolute;left: 510px;bottom: 145px;*/  height:70px; display:block; }
 .item-list .pager li,
 .item-list .pager li a{ color:#ffffff;font-family:"DFHaibaoW12"; font-size:18px; text-align:center; line-height:29px; margin:0px!important;}
-.item-list .pager .pager-first{background:url(../images/pager-first-bg.jpg) no-repeat center center; display:block; width:23px; height:25px;}
-.item-list .pager .pager-previous{background:url(../images/pager-previous-bg.jpg) no-repeat center center; display:block; width:23px; height:25px;}
-.item-list .pager .pager-item{background:url(../images/pager-item-bg.jpg) no-repeat center center; display:block; width:30px; height:29px;}
-.item-list .pager .pager-current{background:url(../images/pager-current-bg.jpg) no-repeat center center; display:block; width:30px; height:29px;}
-.item-list .pager .pager-next{background:url(../images/pager-next-bg.jpg) no-repeat center center; display:block; width:23px; height:25px;}
-.item-list .pager .pager-last{background:url(../images/pager-last-bg.jpg) no-repeat center center; display:block; width:23px; height:25px;}
+.item-list .pager .pager-first{background:url(../images/pager-first-bg.jpg) no-repeat ; display:block; width:23px; height:25px;}
+.item-list .pager .pager-previous{background:url(../images/pager-previous-bg.jpg) no-repeat; display:block; width:23px; height:25px;}
+.item-list .pager .pager-item{background:url(../images/pager-item-bg.jpg) no-repeat ; display:block; width:30px; height:29px;}
+.item-list .pager .pager-current{background:url(../images/pager-current-bg.jpg) no-repeat; display:block; width:30px; height:29px;}
+.item-list .pager .pager-next{background:url(../images/pager-next-bg.jpg) no-repeat ; display:block; width:23px; height:25px;}
+.item-list .pager .pager-last{background:url(../images/pager-last-bg.jpg) no-repeat ; display:block; width:23px; height:25px;}
 .item-list .pager .pager-previous a,
 .item-list .pager .pager-next a,
 .item-list .pager .pager-last a,
@@ -78,16 +78,16 @@
     width: 340px;
 }
 .pager-first {
-    background: url("../images/pager-first-bg.jpg") no-repeat scroll center center transparent;
+    background: url("../images/pager-first-bg.jpg") no-repeat scroll  transparent;
 }
 .pager-previous {
-    background: url("../images/pager-previous-bg.jpg") no-repeat scroll center center transparent;
+    background: url("../images/pager-previous-bg.jpg") no-repeat scroll  transparent;
 }
 .pager-next {
-    background: url("../images/pager-next-bg.jpg") no-repeat scroll center center transparent;
+    background: url("../images/pager-next-bg.jpg") no-repeat scroll  transparent;
 }
 .pager-last {
-    background: url("../images/pager-last-bg.jpg") no-repeat scroll center center transparent;
+    background: url("../images/pager-last-bg.jpg") no-repeat scroll  transparent;
 }
 .pager-first, .pager-previous, .pager-next, .pager-last, .pager-none {
     display: block;
