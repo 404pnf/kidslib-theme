@@ -6,7 +6,8 @@
       $tid = $row->tid;
       $name = $fields['name']->content;
       if (!empty($age)){
-          print l($name, 'ebooklist/category/'.$category.'/'.$age.'/'.$tid . '.html');
+          //print l($name, 'ebooklist/category/'.$category.'/'.$age.'/'.$tid . '.html');
+          print l($name, 'ebooklist/category/'.$category.'/'.$age.'/'.$tid );
       }else{
           //print l($name,'ebooklist/category/'.$category.'/1/'.$tid );
           //print l($name,'ebooklist/category/'.$category.'/1/'.$tid );

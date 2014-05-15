@@ -10,12 +10,15 @@
     $name = $fields['title']->content;
     $base_path =  base_path();
     $theme_path = path_to_theme();
+    $asset_url = asset_url();
     if ($type == "video"){
 	    $result = views_embed_view('get_video_vid', 'default', $fields['nid']->content);
       $video_id = trim(strip_tags($result));
 		  $name = trim(strip_tags($name));
 		  $name = '<span>' .l($name, 'asset/video/html/' . $video_id . '.html',  array('attributes' => array('target' => '_blank'))) .'</span>';
-     	$output .= '<img src="';	
+		  //$name = "<span><a href='/$asset_url/video/html/$video_id.html' target='_blank'>$name</a></span>" ;
+		  //$name = "<span><a href='/$base_path/$theme_path/asset/video/html/$video_id.html' target='_blank'>$name</a></span>" ;
+     		  $output .= '<img src="';	
  		  $output .= $base_path.$theme_path.'/images/tv_'.$bg_arr[$counter-1].'.png"/>'.$name;
     }
 	elseif ($type == "book"){

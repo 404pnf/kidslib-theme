@@ -409,3 +409,7 @@ function ilearning_preprocess_html(&$variables) {
     $variables['theme_hook_suggestions'][] = 'html__'. $node->type;
   }
 }
+
+function asset_url() {
+   return 'asset'; 
+}
