@@ -52,7 +52,7 @@
 	  $result = views_embed_view('get_game_id', 'default', $fields['nid']->content);
       	  $game_id = trim(strip_tags($result));
 	  $name = trim(strip_tags($name));
-	  $name = '<span>' .l($name, 'asset/game/html/' . $game_id . '.html',  array('attributes' => array('target' => '_blank'))) .'</span>';
+	  $name = '<span>' .l($name, 'asset/game/html/' . $game_id  . '/index.html',  array('attributes' => array('target' => '_blank'))) .'</span>';
      	  $output .= '<img src="';	
  	  $output .= $base_path.$theme_path.'/images/tv_'.$bg_arr[$counter-1].'.png"/>'.$name;
     }
