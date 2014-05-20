@@ -38,7 +38,7 @@
 .book_list li.game span a {   color:#f7941d!important;left: 20px!important; top: -10px!important }
 .book_list li .big_image{position: absolute; display: none; left:70px; top:115px;width:308px; height:296px; display:none ;  background-repeat:no-repeat; /*background-size:contain;*/z-index:999;}
 .book_list li .big_image span a, .book_list li .big_image span{ font-family:"DFHaibaoW12"; font-size:23px;padding-top:110px!important; text-align:center; color:#ffffff; display:block; width:235px; padding-left:25px; line-height:130%; white-space:normal!important; height:70px;z-index:1000;}
-.video .big_image span { color: #f7941d !important; }
+.video .big_image span, .game .big_image span { color: #f7941d !important; }
 .book_list li .big_image span{padding-top:200px!important; margin-left:20px;}
 
 .book_list li.video .big_image span a{ color:#f7941d!important;padding-left:10px!important;padding-top:120px!important}
